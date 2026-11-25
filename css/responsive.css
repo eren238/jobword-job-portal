@@ -1,28 +1,36 @@
 /* ==========================================================================
-   JOBWORD Responsive Stylesheet - Mobile, Tablet & Desktop Overhauls
-   Engineered for zero overflow, crisp touch targets & seamless mobile UX
+   JOBWORD Responsive Stylesheet - Complete Mobile Overhaul
+   Zero horizontal overflow, 100% fluid layouts, touch-optimized
    ========================================================================== */
 
-/* Prevent horizontal overflow across entire document */
+/* Universal Reset & Viewport Lock */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
 html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-  width: 100%;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==========================================================================
    TABLET BREAKPOINT (max-width: 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .container {
+  .container, .container-narrow {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3rem;
     text-align: center;
   }
 
@@ -30,6 +38,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .hero-subtitle {
@@ -48,9 +57,8 @@ html, body {
 
   .hero-visual {
     width: 100%;
-    max-width: 480px;
+    max-width: 440px;
     margin: 0 auto;
-    overflow: visible;
   }
 
   .categories-grid {
@@ -60,24 +68,28 @@ html, body {
 
   .steps-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .companies-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
   .page-layout-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 2rem;
   }
 
   .filter-sidebar {
     order: 2;
+    width: 100%;
   }
 
   .listings-main {
     order: 1;
+    width: 100%;
+    min-width: 0;
   }
 
   .footer-top {
@@ -86,11 +98,11 @@ html, body {
   }
 
   .job-detail-body-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .dashboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .dash-stat-row {
@@ -102,383 +114,547 @@ html, body {
    MOBILE BREAKPOINT (max-width: 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+  /* Topbar & Navbar */
   .top-bar {
-    display: none;
+    display: none !important;
   }
 
   .navbar {
-    height: 70px;
+    height: 64px;
   }
 
-  /* Hero Section Mobile */
+  .container, .container-narrow {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Universal Grid & Flex shrink on mobile */
+  .company-filter-grid,
+  .dashboard-grid,
+  .page-layout-grid,
+  .hero-grid,
+  .jobs-grid,
+  .categories-grid,
+  .companies-grid,
+  .dual-cta-grid,
+  .steps-grid,
+  .testimonials-grid,
+  .stats-grid,
+  .job-detail-body-grid,
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    gap: 1.25rem !important;
+  }
+
+  .dashboard-grid > *,
+  .page-layout-grid > *,
+  .hero-grid > *,
+  .jobs-grid > *,
+  .categories-grid > *,
+  .companies-grid > *,
+  .dual-cta-grid > *,
+  .steps-grid > *,
+  .testimonials-grid > *,
+  .stats-grid > *,
+  .dashboard-content,
+  .dashboard-sidebar,
+  .listings-main,
+  .filter-sidebar {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Buttons on Mobile */
+  .btn {
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* HERO SECTION MOBILE */
   .hero-section {
-    padding: 3rem 0 3.5rem;
-    overflow-x: hidden;
+    padding: 2.5rem 0 3rem !important;
+    overflow-x: hidden !important;
   }
 
   .hero-title {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.85rem !important;
+    letter-spacing: -0.02em !important;
+    word-break: break-word !important;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.75rem;
-    padding: 0 0.25rem;
+    font-size: 0.925rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 !important;
+    max-width: 100% !important;
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.75rem;
-    margin-bottom: 1.25rem;
-    text-align: center;
-    line-height: 1.3;
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.65rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
-  /* MOBILE SEARCH BAR: FULLY STACKED WITH ZERO OVERFLOW */
+  /* HERO SEARCH CARD MOBILE */
   .hero-search-card {
-    padding: 1rem;
-    border-radius: var(--radius-md);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    margin-bottom: 1.5rem;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 0.85rem !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
   }
 
   .hero-search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
   }
 
   .search-field,
   .search-field.keyword-field,
   .search-field.location-field,
   .search-field.category-field {
-    width: 100%;
-    flex: none;
-    border-right: none;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 0.75rem 0.9rem;
-    background-color: var(--bg-page);
-    min-width: 0; /* CRITICAL: prevents input intrinsic width overflow */
-    box-sizing: border-box;
+    width: 100% !important;
+    flex: none !important;
+    border-right: none !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 0.75rem 0.85rem !important;
+    background-color: var(--bg-page) !important;
+    min-width: 0 !important;
   }
 
   .search-field:focus-within {
-    border-color: var(--primary);
-    background-color: #ffffff;
-    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+    border-color: var(--primary) !important;
+    background-color: #ffffff !important;
   }
 
   .search-field input,
   .search-field select {
-    width: 100%;
-    min-width: 0;
-    font-size: 0.9375rem;
-    color: var(--dark-900);
+    width: 100% !important;
+    min-width: 0 !important;
+    font-size: 0.9rem !important;
   }
 
   .hero-search-form .btn-search {
-    width: 100%;
-    padding: 0.9rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    justify-content: center;
-    border-radius: var(--radius-sm);
-    box-sizing: border-box;
+    width: 100% !important;
+    padding: 0.85rem !important;
+    font-size: 0.95rem !important;
+    justify-content: center !important;
+    border-radius: var(--radius-sm) !important;
   }
 
   /* Trending Searches Mobile */
   .popular-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.45rem;
-    font-size: 0.8125rem;
-    width: 100%;
-    padding: 0 0.5rem;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+    font-size: 0.78rem !important;
   }
 
   .popular-tags strong {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0.25rem;
-    font-size: 0.8125rem;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 0.2rem !important;
   }
 
   .popular-tags a {
-    padding: 0.25rem 0.55rem;
-    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
   }
 
-  /* Hero Visual Portrait Mobile */
+  /* HERO VISUAL MOBILE */
   .hero-visual {
-    width: 100%;
-    max-width: 320px;
-    margin: 2.5rem auto 0;
-    min-height: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2rem auto 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    min-height: auto !important;
   }
 
   .hero-visual-wrapper {
-    max-width: 100%;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative !important;
   }
 
   .hero-visual-wrapper::before,
   .hero-visual-wrapper::after {
-    display: none; /* remove wide backdrop rings that cause overflow */
+    display: none !important;
   }
 
   .hero-portrait-frame {
-    width: 260px;
-    height: 320px;
-    border-radius: 18px;
-    margin: 0 auto;
+    width: 240px !important;
+    height: 300px !important;
+    border-radius: 16px !important;
+    margin: 0 auto !important;
   }
 
-  /* Floating Badges Mobile - positioned safely inside bounds */
   .floating-hero-card {
-    padding: 0.65rem 0.85rem;
-    gap: 0.65rem;
-  }
-
-  .floating-hero-card.card-offer {
-    top: -15px;
-    right: -10px;
-    transform: scale(0.85);
-    transform-origin: top right;
-  }
-
-  .floating-hero-card.card-stats {
-    bottom: -15px;
-    left: -10px;
-    transform: scale(0.85);
-    transform-origin: bottom left;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    animation: none !important;
+    margin: 0.65rem auto 0 !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    padding: 0.65rem 0.85rem !important;
   }
 
   .floating-hero-card.card-verified {
-    display: none; /* keep clean on small screens */
+    display: none !important;
   }
 
-  .floating-hero-card .f-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-
-  .floating-hero-card .f-info .f-title {
-    font-size: 0.75rem;
-  }
-
-  .floating-hero-card .f-info .f-sub {
-    font-size: 0.65rem;
-  }
-
-  .floating-hero-card .f-info .f-highlight {
-    font-size: 0.7rem;
-  }
-
-  /* Stats Strip Mobile */
+  /* STATS STRIP MOBILE */
   .stats-strip {
-    padding: 2rem 0;
+    padding: 1.75rem 0 !important;
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 1rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem 0.75rem !important;
   }
 
   .stat-item:not(:last-child)::after {
-    display: none;
+    display: none !important;
   }
 
   .stat-number {
-    font-size: 1.85rem;
+    font-size: 1.75rem !important;
   }
 
   .stat-label {
-    font-size: 0.8125rem;
+    font-size: 0.78rem !important;
   }
 
-  /* Section Headers Mobile */
+  /* SECTION HEADERS MOBILE */
   .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem !important;
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.65rem !important;
+    word-break: break-word !important;
   }
 
   .section-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.875rem !important;
+    line-height: 1.55 !important;
   }
 
-  /* Categories & Jobs Mobile */
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
+  /* JOB CARDS MOBILE */
   .jobs-filter-tabs {
-    flex-wrap: wrap;
-    gap: 0.35rem;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .tab-btn {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.8125rem;
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.78rem !important;
   }
 
-  .jobs-grid,
+  .jobs-listing-container,
   .jobs-listing-container.grid-view {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
   }
 
   .job-card {
-    padding: 1.25rem;
+    padding: 1.25rem !important;
+    width: 100% !important;
   }
 
   .job-card-header {
-    gap: 0.85rem;
+    gap: 0.75rem !important;
+  }
+
+  .company-logo {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1rem !important;
   }
 
   .job-title {
-    font-size: 1.05rem;
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
   }
 
   .job-card-meta {
-    gap: 0.65rem 1rem;
-    font-size: 0.8125rem;
+    gap: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+    word-break: break-word !important;
   }
 
   .job-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
   }
 
-  /* Dual CTA Mobile */
-  .dual-cta-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .job-tags {
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
   }
 
+  /* DUAL CTA MOBILE */
   .cta-box {
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.25rem !important;
+    width: 100% !important;
   }
 
   .cta-box h3 {
-    font-size: 1.45rem;
+    font-size: 1.35rem !important;
+    word-break: break-word !important;
   }
 
-  /* Testimonials Mobile */
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .cta-box p {
+    font-size: 0.875rem !important;
   }
 
-  /* Job Detail Mobile */
+  /* TESTIMONIALS MOBILE */
+  .testimonial-card {
+    padding: 1.5rem 1.25rem !important;
+    width: 100% !important;
+  }
+
+  /* INNER BANNER MOBILE */
+  .inner-banner {
+    padding: 2.25rem 0 !important;
+  }
+
+  .inner-banner-title {
+    font-size: 1.65rem !important;
+    word-break: break-word !important;
+  }
+
+  .inner-banner-subtitle {
+    font-size: 0.875rem !important;
+  }
+
+  /* DASHBOARD MOBILE OVERHAUL */
+  .dashboard-grid {
+    padding: 1.75rem 0 !important;
+  }
+
+  .dashboard-sidebar {
+    width: 100% !important;
+    padding: 1.25rem !important;
+  }
+
+  .dashboard-content {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .dash-stat-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .dash-stat-card {
+    padding: 1.15rem 1rem !important;
+  }
+
+  .dash-table-card {
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Responsive Data Table */
+  .table-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .data-table {
+    min-width: 500px !important;
+    width: 100% !important;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 0.65rem !important;
+    font-size: 0.8125rem !important;
+    white-space: normal !important;
+  }
+
+  /* JOB DETAIL MOBILE */
   .job-detail-header-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.5rem;
-    margin-top: -2rem;
+    margin-top: -1.5rem !important;
+    padding: 1.25rem !important;
+    width: 100% !important;
+    border-radius: var(--radius-sm) !important;
   }
 
   .job-detail-primary {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+  }
+
+  .job-detail-logo {
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 1.5rem !important;
   }
 
   .job-detail-title {
-    font-size: 1.45rem;
+    font-size: 1.35rem !important;
+    word-break: break-word !important;
   }
 
   .job-detail-actions {
-    width: 100%;
+    width: 100% !important;
+    margin-top: 0.85rem !important;
   }
 
   .job-detail-actions .btn {
-    width: 100%;
+    width: 100% !important;
   }
 
   .job-description-box {
-    padding: 1.5rem;
+    padding: 1.5rem 1.15rem !important;
+    width: 100% !important;
   }
 
-  .form-grid-2, .form-grid-3 {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .job-overview-card {
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+  }
+
+  /* POST JOB FORM MOBILE */
+  .post-job-form-card {
+    padding: 1.5rem 1rem !important;
+    width: 100% !important;
+  }
+
+  /* AUTH MOBILE */
+  .auth-wrapper {
+    padding: 2.5rem 1rem !important;
+  }
+
+  .auth-card {
+    padding: 2rem 1.25rem !important;
+    width: 100% !important;
+  }
+
+  /* MODAL MOBILE */
+  .modal-dialog {
+    width: calc(100% - 1.5rem) !important;
+    max-width: 100% !important;
+    padding: 1.5rem 1.15rem !important;
+    margin: 0.75rem !important;
+    max-height: 85vh !important;
   }
 
   /* Mobile Navigation Drawer */
   .mobile-nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    font-size: 1.6rem;
-    border-radius: var(--radius-sm);
-    background-color: var(--primary-light);
-    color: var(--primary);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.4rem !important;
+    border-radius: var(--radius-sm) !important;
+    background-color: var(--primary-light) !important;
+    color: var(--primary) !important;
   }
 
   .nav-menu {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 85%;
-    max-width: 320px;
-    height: calc(100vh - 70px);
-    background-color: #ffffff;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.75rem 1.5rem;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
-    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 2000;
-    overflow-y: auto;
+    position: fixed !important;
+    top: 64px !important;
+    left: -100% !important;
+    width: 82% !important;
+    max-width: 300px !important;
+    height: calc(100vh - 64px) !important;
+    background-color: #ffffff !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.5rem !important;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.25) !important;
+    transition: left 0.25s ease !important;
+    z-index: 2500 !important;
+    overflow-y: auto !important;
   }
 
   .nav-menu.open {
-    left: 0;
+    left: 0 !important;
   }
 
   .nav-menu .nav-link {
-    width: 100%;
-    padding: 0.85rem 0;
-    font-size: 1rem;
-    border-bottom: 1px solid var(--border-subtle);
+    width: 100% !important;
+    padding: 0.75rem 0 !important;
+    font-size: 0.95rem !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
   }
 
   .nav-actions {
-    display: none;
+    display: none !important;
   }
 
-  /* Footer Mobile */
+  /* FOOTER MOBILE */
   .site-footer {
-    padding: 3.5rem 0 1.5rem;
+    padding: 3rem 0 1.5rem !important;
   }
 
   .footer-top {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-bottom: 2.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 
   .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
   }
 }
 
@@ -486,32 +662,31 @@ html, body {
    EXTRA SMALL MOBILE (max-width: 480px)
    ========================================================================== */
 @media (max-width: 480px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .hero-title {
-    font-size: 1.75rem;
+  .container, .container-narrow {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
 
-  .dash-stat-row {
-    grid-template-columns: 1fr;
+  .hero-title {
+    font-size: 1.65rem !important;
   }
 
   .listings-topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    padding: 0.85rem !important;
   }
 
   .listings-controls {
-    width: 100%;
-    justify-content: space-between;
+    width: 100% !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
   }
 }

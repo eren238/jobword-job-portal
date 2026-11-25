@@ -1265,6 +1265,14 @@ button, input, select, textarea {
   transform: translateY(-3px);
 }
 
+.company-filter-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr auto;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
 .company-avatar {
   width: 64px;
   height: 64px;
