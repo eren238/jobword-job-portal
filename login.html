@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Authentication | JOBWORD</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+</head>
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
+          <div class="brand-icon">J</div>
+          <span>JOB<span class="accent">WORD</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm active">Sign In</a>
+          <a href="post-job.html" class="btn btn-primary btn-sm">+ Post a Job</a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Auth Main Wrapper -->
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="brand-icon" style="margin: 0 auto 1rem; width: 44px; height: 44px;">J</div>
+        <h2 id="auth-form-title">Candidate Account Login</h2>
+        <p>Access your confidential executive pipeline and requisitions</p>
+      </div>
+
+      <!-- Account Role Switcher -->
+      <div class="auth-role-tabs">
+        <button class="auth-role-btn active" data-role="candidate">Candidate Portal</button>
+        <button class="auth-role-btn" data-role="employer">Enterprise Recruiter</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="auth-login-form">
+        <div class="form-group">
+          <label for="auth-email">Corporate Email Address</label>
+          <input type="email" id="auth-email" class="form-control" placeholder="name@domain.com" required value="alexander.vance@executive.io">
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label for="auth-password" style="margin-bottom: 0;">Password</label>
+            <a href="#" style="font-size: 0.8125rem;" onclick="event.preventDefault(); showToast('Password recovery sent to registered email.');">Forgot?</a>
+          </div>
+          <input type="password" id="auth-password" class="form-control" placeholder="••••••••••••" required value="SecurePass2026!">
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.875rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" checked style="accent-color: var(--primary);">
+            <span>Remember this workstation</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          Sign In to Portal →
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); font-size: 0.875rem; color: var(--text-muted);">
+        Don't have an enterprise account?
+        <a href="dashboard.html" style="font-weight: 700; color: var(--primary);">Request Vetting</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top: 0; border: none;">
+        <div>© 2026 JOBWORD Inc. All rights reserved. Enterprise Navy Edition.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jobs-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

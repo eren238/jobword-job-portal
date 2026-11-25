@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate & Executive Dashboard | JOBWORD</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Quick Contacts">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>📍 Global Operations: New York • London • Zurich • Singapore</span>
+        <span>📞 Enterprise Hotline: +1 (800) 555-0199</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="post-job.html">For Employers</a>
+        <a href="dashboard.html">Candidate Portal</a>
+        <a href="login.html">Corporate Sign In</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
+          <div class="brand-icon">J</div>
+          <span>JOB<span class="accent">WORD</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="post-job.html" class="btn btn-primary btn-sm">+ Post a Job</a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inner Page Banner -->
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Executive Dashboard</span>
+      </div>
+      <h1 class="inner-banner-title">Candidate Executive Dashboard</h1>
+      <p class="inner-banner-subtitle">
+        Manage your active pipeline, review pending applications, and track opportunities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dashboard Main Grid -->
+  <main class="container">
+    <div class="dashboard-grid">
+
+      <!-- Left Sidebar Navigation -->
+      <aside class="dashboard-sidebar">
+        <div class="dashboard-user-card">
+          <div class="dashboard-avatar">AV</div>
+          <h3 class="dashboard-user-name">Alexander Vance</h3>
+          <p class="dashboard-user-role">Cloud Architect & SRE Lead</p>
+          <span class="badge badge-remote" style="margin-top: 0.5rem;">Verified Member</span>
+        </div>
+
+        <div class="dashboard-menu-list">
+          <a href="#overview" class="dash-menu-link active" data-tab="tab-overview">
+            <span>📊</span> Overview & Metrics
+          </a>
+          <a href="#applications" class="dash-menu-link" data-tab="tab-applications">
+            <span>📝</span> My Applications
+          </a>
+          <a href="#saved" class="dash-menu-link" data-tab="tab-saved">
+            <span>★</span> Saved Shortlist
+          </a>
+          <a href="#resume" class="dash-menu-link" data-tab="tab-resume">
+            <span>📄</span> Resume & Credentials
+          </a>
+        </div>
+      </aside>
+
+      <!-- Right Dashboard Content Area -->
+      <section class="dashboard-content">
+
+        <!-- Tab 1: Overview -->
+        <div id="tab-overview" class="dashboard-tab-content">
+          <!-- Metric Stat Cards -->
+          <div class="dash-stat-row">
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon">📨</div>
+              <div class="dash-stat-info">
+                <div class="num" id="dash-stat-applied">3</div>
+                <div class="lbl">Applications Sent</div>
+              </div>
+            </div>
+
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon">📅</div>
+              <div class="dash-stat-info">
+                <div class="num">1</div>
+                <div class="lbl">Interviews Scheduled</div>
+              </div>
+            </div>
+
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon">⭐</div>
+              <div class="dash-stat-info">
+                <div class="num" id="dash-stat-saved">2</div>
+                <div class="lbl">Saved Positions</div>
+              </div>
+            </div>
+
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon">👁️</div>
+              <div class="dash-stat-info">
+                <div class="num">48</div>
+                <div class="lbl">Recruiter Profile Views</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Completion Card -->
+          <div style="background-color: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong>Executive Profile Strength: 85% Complete</strong>
+              <span class="badge badge-fulltime">Tier-1 Qualified</span>
+            </div>
+            <div style="height: 8px; background: var(--bg-card-subtle); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
+              <div style="width: 85%; height: 100%; background: linear-gradient(90deg, var(--primary) 0%, var(--accent-blue) 100%);"></div>
+            </div>
+            <p style="font-size: 0.8125rem; color: var(--text-muted); margin: 0;">
+              Add your verified security clearance or public Git repository to reach 100% and unlock priority direct recruiter routing.
+            </p>
+          </div>
+
+          <!-- Applications Table Card -->
+          <div class="dash-table-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+              <h3 style="font-size: 1.15rem;">Recent Requisitions & Application Status</h3>
+              <a href="jobs.html" class="btn btn-outline btn-sm">+ Find New Openings</a>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Role Title</th>
+                    <th>Enterprise Partner</th>
+                    <th>Date Applied</th>
+                    <th>Current Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-applications-body">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Applications (shared view) -->
+        <div id="tab-applications" class="dashboard-tab-content" style="display: none;">
+          <div class="dash-table-card">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">All Submitted Applications</h3>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Role Title</th>
+                    <th>Enterprise Partner</th>
+                    <th>Date Applied</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Senior Cloud Infrastructure Architect</strong></td>
+                    <td>Apex Global Technologies</td>
+                    <td>Nov 22, 2026</td>
+                    <td><span class="badge badge-fulltime">Under Review</span></td>
+                    <td><button class="btn btn-outline btn-sm" onclick="showToast('Inquiry forwarded to Apex HR.', 'info')">Inquire</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Principal Machine Learning Engineer</strong></td>
+                    <td>Cognitive Nexus Labs</td>
+                    <td>Nov 20, 2026</td>
+                    <td><span class="badge badge-remote">Interview Scheduled</span></td>
+                    <td><button class="btn btn-primary btn-sm" onclick="showToast('Interview confirmed for Friday 2:00 PM EST.', 'info')">View Details</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lead Cybersecurity Risk Officer</strong></td>
+                    <td>Vanguard Trust Partners</td>
+                    <td>Nov 15, 2026</td>
+                    <td><span class="badge badge-contract">Application Viewed</span></td>
+                    <td><button class="btn btn-outline btn-sm" onclick="showToast('Status request sent to Vanguard.', 'info')">Inquire</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Saved Shortlist -->
+        <div id="tab-saved" class="dashboard-tab-content" style="display: none;">
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.25rem;">Saved Executive Roles</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem;">
+              Review and apply directly to positions you have bookmarked.
+            </p>
+          </div>
+          <div id="dashboard-saved-container" class="jobs-listing-container">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Tab 4: Resume & Credentials -->
+        <div id="tab-resume" class="dashboard-tab-content" style="display: none;">
+          <div class="dash-table-card">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Executive Credentials & CV</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.75rem;">
+              Manage your verified executive profile documents. Organizations with active requisitions can inspect verified resumes.
+            </p>
+
+            <div style="border: 2px dashed var(--border-strong); border-radius: var(--radius-md); padding: 2.5rem; text-align: center; background-color: var(--bg-page); margin-bottom: 2rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📄</div>
+              <h4 style="margin-bottom: 0.25rem;">Upload Updated Executive Resume</h4>
+              <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                Supported formats: PDF, DOCX (Maximum file size: 10MB)
+              </p>
+              <input type="file" id="cv-upload-input" style="display: none;" onchange="showToast('Executive Resume uploaded & verified.');">
+              <button class="btn btn-primary btn-sm" onclick="document.getElementById('cv-upload-input').click();">
+                Select File from Device
+              </button>
+            </div>
+
+            <h4 style="font-size: 1.05rem; margin-bottom: 1rem;">Active Documents on File</h4>
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-page);">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="font-size: 1.5rem;">📄</span>
+                <div>
+                  <strong>Alexander_Vance_Executive_Cloud_Resume_2026.pdf</strong>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Verified on Nov 18, 2026 • 240 KB</div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-sm" onclick="showToast('Resume downloaded.');">Download</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">J</div>
+            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
+          </a>
+          <p class="footer-desc">
+            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Candidates</h4>
+          <ul class="footer-links">
+            <li><a href="jobs.html">Browse All Jobs</a></li>
+            <li><a href="dashboard.html">Candidate Dashboard</a></li>
+            <li><a href="dashboard.html">Saved Shortlist</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Employers</h4>
+          <ul class="footer-links">
+            <li><a href="post-job.html">Post an Opportunity</a></li>
+            <li><a href="companies.html">Company Directory</a></li>
+            <li><a href="contact.html">Corporate Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Executive Briefing</h4>
+          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jobs-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

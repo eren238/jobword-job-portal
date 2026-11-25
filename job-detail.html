@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunity Specification | JOBWORD</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Quick Contacts">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>📍 Global Operations: New York • London • Zurich • Singapore</span>
+        <span>📞 Enterprise Hotline: +1 (800) 555-0199</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="post-job.html">For Employers</a>
+        <a href="dashboard.html">Candidate Portal</a>
+        <a href="login.html">Corporate Sign In</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
+          <div class="brand-icon">J</div>
+          <span>JOB<span class="accent">WORD</span></span>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Right Side Nav Actions -->
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="post-job.html" class="btn btn-primary btn-sm">+ Post a Job</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inner Page Banner -->
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="jobs.html">Find Jobs</a>
+        <span>/</span>
+        <span>Job Specification</span>
+      </div>
+      <div style="height: 1.5rem;"></div>
+    </div>
+  </section>
+
+  <!-- Job Details Container -->
+  <main class="container">
+    <!-- Elevated Job Header Card -->
+    <div class="job-detail-header-card">
+      <div class="job-detail-primary">
+        <div class="job-detail-logo" id="job-detail-logo">
+          AG
+        </div>
+        <div>
+          <h1 class="job-detail-title" id="job-detail-title">Senior Cloud Infrastructure Architect</h1>
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <strong id="job-detail-company" style="color: var(--primary); font-size: 1.05rem;">Apex Global Technologies</strong>
+            <span class="badge badge-remote">Verified Enterprise</span>
+            <span class="badge badge-fulltime" id="job-detail-type">Full Time</span>
+          </div>
+          <div class="job-detail-tags">
+            <span style="color: var(--text-muted); font-size: 0.875rem;">📍 <span id="job-detail-location">New York, NY (Hybrid)</span></span>
+            <span style="color: var(--text-muted); font-size: 0.875rem;">⏱ Posted <span id="job-detail-date">2 hours ago</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job-detail-actions">
+        <button id="open-apply-modal-btn" class="btn btn-primary btn-lg">
+          Apply for Position →
+        </button>
+      </div>
+    </div>
+
+    <!-- Job Body Grid (Content + Sidebar) -->
+    <div class="job-detail-body-grid">
+      <!-- Left Content Box -->
+      <section class="job-description-box">
+        <!-- Overview -->
+        <div class="job-content-section">
+          <h2 class="job-content-title">Executive Summary</h2>
+          <p id="job-detail-overview" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-body);">
+            Loading role overview...
+          </p>
+        </div>
+
+        <!-- Key Responsibilities -->
+        <div class="job-content-section">
+          <h2 class="job-content-title">Key Responsibilities & Deliverables</h2>
+          <ul class="job-checklist" id="job-detail-responsibilities">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+
+        <!-- Requirements -->
+        <div class="job-content-section">
+          <h2 class="job-content-title">Required Competencies & Qualifications</h2>
+          <ul class="job-checklist" id="job-detail-requirements">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+
+        <!-- Compensation & Benefits -->
+        <div class="job-content-section">
+          <h2 class="job-content-title">Executive Compensation & Benefits</h2>
+          <ul class="job-checklist" id="job-detail-benefits">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+
+        <!-- Similar Jobs Section -->
+        <div style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.35rem;">Related Executive Openings</h3>
+          <div id="related-jobs-container" class="jobs-listing-container">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Sidebar Overview Card -->
+      <aside>
+        <div class="job-overview-card">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+            Position Overview
+          </h3>
+
+          <div class="overview-list">
+            <div class="overview-row">
+              <div class="overview-icon">💰</div>
+              <div class="overview-text">
+                <span class="lbl">Annual Compensation</span>
+                <div class="val" id="job-detail-salary">$165k - $195k / year</div>
+              </div>
+            </div>
+
+            <div class="overview-row">
+              <div class="overview-icon">💼</div>
+              <div class="overview-text">
+                <span class="lbl">Employment Classification</span>
+                <div class="val">Full-Time Direct Hire</div>
+              </div>
+            </div>
+
+            <div class="overview-row">
+              <div class="overview-icon">🎓</div>
+              <div class="overview-text">
+                <span class="lbl">Experience Requirement</span>
+                <div class="val">Senior / Lead (6+ Years)</div>
+              </div>
+            </div>
+
+            <div class="overview-row">
+              <div class="overview-icon">🛡️</div>
+              <div class="overview-text">
+                <span class="lbl">Security Clearance</span>
+                <div class="val">Public Trust / SOC2 Vetted</div>
+              </div>
+            </div>
+
+            <div class="overview-row">
+              <div class="overview-icon">🏢</div>
+              <div class="overview-text">
+                <span class="lbl">Workplace Policy</span>
+                <div class="val">Hybrid (2 Days Onsite)</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle);">
+            <button class="btn btn-outline" style="width: 100%;" onclick="showToast('Job opportunity link copied to clipboard.');">
+              🔗 Share Opportunity
+            </button>
+          </div>
+        </div>
+
+        <!-- Hiring Company Card -->
+        <div class="job-overview-card">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">
+            About the Employer
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Global enterprise consulting and mission-critical cloud engineering firm servicing Fortune 100 clients.
+          </p>
+          <div style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--dark-800);">
+            <div><strong>Industry:</strong> Enterprise Cloud & IT Services</div>
+            <div><strong>Company Size:</strong> 2,500 - 5,000 Employees</div>
+            <div><strong>Founded:</strong> 2008</div>
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <a href="companies.html" class="btn btn-outline btn-sm" style="width: 100%;">View Company Profile</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Application Modal Dialog -->
+  <div class="modal-overlay" id="apply-job-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="close-apply-modal-btn" aria-label="Close modal">✕</button>
+
+      <div class="modal-header">
+        <span class="badge badge-fulltime" style="margin-bottom: 0.5rem;">Direct Submission</span>
+        <h2 class="modal-title" id="modal-title">Submit Confidential Application</h2>
+        <p style="color: var(--text-muted); font-size: 0.875rem;">
+          Your profile will be presented directly to the hiring executive committee.
+        </p>
+      </div>
+
+      <form id="apply-job-form">
+        <div class="form-group">
+          <label for="applicant-name">Full Name *</label>
+          <input type="text" id="applicant-name" class="form-control" placeholder="e.g. Jonathan Vance" required>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="applicant-email">Corporate Email *</label>
+            <input type="email" id="applicant-email" class="form-control" placeholder="name@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label for="applicant-phone">Telephone *</label>
+            <input type="tel" id="applicant-phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-linkedin">LinkedIn / Portfolio URL</label>
+          <input type="url" id="applicant-linkedin" class="form-control" placeholder="https://linkedin.com/in/username">
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-resume">Attach Executive CV / Resume (PDF / DOCX) *</label>
+          <input type="file" id="applicant-resume" class="form-control" accept=".pdf,.doc,.docx" required>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-notes">Executive Note / Motivation Summary</label>
+          <textarea id="applicant-notes" class="form-control" placeholder="Highlight key relevant achievements or clearance status..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('apply-job-modal').classList.remove('active');">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">
+            Transmit Application →
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">J</div>
+            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
+          </a>
+          <p class="footer-desc">
+            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="GitHub">gh</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Candidates</h4>
+          <ul class="footer-links">
+            <li><a href="jobs.html">Browse All Jobs</a></li>
+            <li><a href="jobs.html?type=remote">Remote Positions</a></li>
+            <li><a href="dashboard.html">Candidate Dashboard</a></li>
+            <li><a href="dashboard.html">Saved Shortlist</a></li>
+            <li><a href="jobs.html?category=engineering">Tech Opportunities</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Employers</h4>
+          <ul class="footer-links">
+            <li><a href="post-job.html">Post an Opportunity</a></li>
+            <li><a href="companies.html">Company Directory</a></li>
+            <li><a href="dashboard.html">Enterprise Portal</a></li>
+            <li><a href="contact.html">Corporate Solutions</a></li>
+            <li><a href="login.html">Recruiter Login</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Executive Briefing</h4>
+          <p class="footer-desc">
+            Receive weekly curated executive opportunities, market compensation benchmarks, and industry reports.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to Executive Briefing.'); this.reset();">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="corporate.email@domain.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe to Briefing</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="contact.html">Security & Compliance</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jobs-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

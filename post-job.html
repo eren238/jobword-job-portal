@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a Requisition | JOBWORD</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Quick Contacts">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>📍 Global Operations: New York • London • Zurich • Singapore</span>
+        <span>📞 Enterprise Hotline: +1 (800) 555-0199</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="post-job.html">For Employers</a>
+        <a href="dashboard.html">Candidate Portal</a>
+        <a href="login.html">Corporate Sign In</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
+          <div class="brand-icon">J</div>
+          <span>JOB<span class="accent">WORD</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="post-job.html" class="btn btn-primary btn-sm active">+ Post a Job</a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inner Banner -->
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="jobs.html">Employers</a>
+        <span>/</span>
+        <span>Post an Opportunity</span>
+      </div>
+      <h1 class="inner-banner-title">Publish an Executive Requisition</h1>
+      <p class="inner-banner-subtitle">
+        Distribute your position directly to vetted leaders, senior software architects, and quantitative analysts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Form Content -->
+  <main class="container" style="padding-top: 3.5rem;">
+    <div class="container-narrow">
+      <div class="post-job-form-card">
+        <form id="post-job-form">
+
+          <!-- Section 1: Role Overview -->
+          <h2 class="form-section-title">1. Position Specifics</h2>
+
+          <div class="form-group">
+            <label for="job-post-title">Position Title *</label>
+            <input type="text" id="job-post-title" class="form-control" placeholder="e.g. Principal Cloud Systems Architect" required>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="job-category">Primary Discipline *</label>
+              <select id="job-category" class="form-control" required>
+                <option value="">Select Category</option>
+                <option value="engineering">Software & Cloud Engineering</option>
+                <option value="data-ai">AI, ML & Data Science</option>
+                <option value="security">Cybersecurity & Governance</option>
+                <option value="finance">Quantitative Finance & Banking</option>
+                <option value="executive">Executive & Corporate Strategy</option>
+                <option value="product">Product & Enterprise Design</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="job-type">Employment Arrangement *</label>
+              <select id="job-type" class="form-control" required>
+                <option value="Full Time">Full-Time Direct Hire</option>
+                <option value="Remote">100% Fully Remote</option>
+                <option value="Contract">Executive Retainer / Contract</option>
+                <option value="Hybrid">Hybrid Office</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="job-location">Primary Location / Region *</label>
+              <input type="text" id="job-location" class="form-control" placeholder="e.g. New York, NY or Global Remote" required>
+            </div>
+
+            <div class="form-group">
+              <label for="job-exp">Seniority Level *</label>
+              <select id="job-exp" class="form-control" required>
+                <option value="Senior">Senior (5-7 Years)</option>
+                <option value="Lead">Lead / Principal (7-10 Years)</option>
+                <option value="Director">Director / VP (10+ Years)</option>
+                <option value="C-Level">C-Suite / Executive Board</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Section 2: Compensation -->
+          <h2 class="form-section-title" style="margin-top: 2.5rem;">2. Compensation & Package</h2>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="salary-min">Minimum Annual Compensation (USD) *</label>
+              <input type="number" id="salary-min" class="form-control" placeholder="140000" required>
+            </div>
+
+            <div class="form-group">
+              <label for="salary-max">Maximum Annual Compensation (USD) *</label>
+              <input type="number" id="salary-max" class="form-control" placeholder="185000" required>
+            </div>
+          </div>
+
+          <!-- Section 3: Company Profile -->
+          <h2 class="form-section-title" style="margin-top: 2.5rem;">3. Enterprise Profile</h2>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="company-name">Hiring Organization Name *</label>
+              <input type="text" id="company-name" class="form-control" placeholder="e.g. Apex Global Technologies" required>
+            </div>
+
+            <div class="form-group">
+              <label for="company-website">Corporate URL</label>
+              <input type="url" id="company-website" class="form-control" placeholder="https://company.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="recruiter-email">Executive Recruiter Email *</label>
+            <input type="email" id="recruiter-email" class="form-control" placeholder="recruiter@company.com" required>
+          </div>
+
+          <!-- Section 4: Job Description -->
+          <h2 class="form-section-title" style="margin-top: 2.5rem;">4. Role Specification & Deliverables</h2>
+
+          <div class="form-group">
+            <label for="job-desc">Executive Role Summary *</label>
+            <textarea id="job-desc" class="form-control" rows="5" placeholder="Detail the strategic purpose of this position..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="job-reqs">Core Requirements & Competencies *</label>
+            <textarea id="job-reqs" class="form-control" rows="5" placeholder="List certifications, technical stacks, or leadership qualifications..." required></textarea>
+          </div>
+
+          <!-- Form Submission Actions -->
+          <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+            <button type="button" class="btn btn-outline" onclick="window.history.back();">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-lg">Publish Opportunity →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">J</div>
+            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
+          </a>
+          <p class="footer-desc">
+            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Candidates</h4>
+          <ul class="footer-links">
+            <li><a href="jobs.html">Browse All Jobs</a></li>
+            <li><a href="dashboard.html">Candidate Dashboard</a></li>
+            <li><a href="dashboard.html">Saved Shortlist</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Employers</h4>
+          <ul class="footer-links">
+            <li><a href="post-job.html">Post an Opportunity</a></li>
+            <li><a href="companies.html">Company Directory</a></li>
+            <li><a href="contact.html">Corporate Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Executive Briefing</h4>
+          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jobs-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

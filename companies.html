@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Employers Directory | JOBWORD</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Quick Contacts">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>📍 Global Operations: New York • London • Zurich • Singapore</span>
+        <span>📞 Enterprise Hotline: +1 (800) 555-0199</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="post-job.html">For Employers</a>
+        <a href="dashboard.html">Candidate Portal</a>
+        <a href="login.html">Corporate Sign In</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
+          <div class="brand-icon">J</div>
+          <span>JOB<span class="accent">WORD</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="companies.html" class="nav-link active">Companies</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="post-job.html" class="btn btn-primary btn-sm">+ Post a Job</a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inner Page Banner -->
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Employers Directory</span>
+      </div>
+      <h1 class="inner-banner-title">Hiring Organizations & Enterprise Partners</h1>
+      <p class="inner-banner-subtitle">
+        Explore premier technology innovators, financial institutions, and global advisory groups.
+      </p>
+    </div>
+  </section>
+
+  <!-- Directory Section -->
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <!-- Directory Search Bar -->
+    <div style="background-color: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-sm);">
+      <div style="display: grid; grid-template-columns: 2fr 1.5fr auto; gap: 1rem; align-items: center;">
+        <input type="text" id="company-search-input" class="form-control" placeholder="Search by organization name or industry...">
+        <select class="form-control" id="company-industry-select">
+          <option value="">All Sectors</option>
+          <option value="tech">Software & Cloud Tech</option>
+          <option value="finance">Banking & Private Equity</option>
+          <option value="ai">Artificial Intelligence & MLOps</option>
+          <option value="security">Defense & Cyber Operations</option>
+        </select>
+        <button class="btn btn-primary" onclick="showToast('Directory filtered.');">Filter Partners</button>
+      </div>
+    </div>
+
+    <!-- Company Grid -->
+    <div class="companies-grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+      <!-- Company 1 -->
+      <div class="company-card" style="text-align: left; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="company-avatar" style="margin: 0; background: #0f1c3f; color: #fff;">AG</div>
+          <div>
+            <h3 class="company-name" style="margin: 0;">Apex Global Technologies</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-muted);">Enterprise Cloud & DevSecOps</span>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
+          Leading architecture partner for Fortune 50 cloud transformations, Kubernetes modernization, and zero trust.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 New York, NY</span>
+          <a href="jobs.html?keyword=Apex" class="company-openings">14 Active Roles →</a>
+        </div>
+      </div>
+
+      <!-- Company 2 -->
+      <div class="company-card" style="text-align: left; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="company-avatar" style="margin: 0; background: #1e3a8a; color: #fff;">VT</div>
+          <div>
+            <h3 class="company-name" style="margin: 0;">Vanguard Trust Partners</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-muted);">Private Banking & Wealth</span>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
+          Managing over $45B in specialized private capital, sovereign advisory, and global risk management.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 Washington, DC</span>
+          <a href="jobs.html?keyword=Vanguard" class="company-openings">8 Active Roles →</a>
+        </div>
+      </div>
+
+      <!-- Company 3 -->
+      <div class="company-card" style="text-align: left; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="company-avatar" style="margin: 0; background: #172554; color: #fff;">CN</div>
+          <div>
+            <h3 class="company-name" style="margin: 0;">Cognitive Nexus Labs</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-muted);">AI & Generative Foundation Models</span>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
+          Research and development collective deploying enterprise multimodal reasoning models and synthetic data tools.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 San Francisco, CA</span>
+          <a href="jobs.html?keyword=Cognitive" class="company-openings">19 Active Roles →</a>
+        </div>
+      </div>
+
+      <!-- Company 4 -->
+      <div class="company-card" style="text-align: left; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="company-avatar" style="margin: 0; background: #0a1128; color: #fff;">SM</div>
+          <div>
+            <h3 class="company-name" style="margin: 0;">Sterling & Mercer Holdings</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-muted);">Corporate Strategy & M&A</span>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
+          Institutional advisory firm steering complex cross-border mergers, corporate carve-outs, and venture integration.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 Chicago, IL</span>
+          <a href="jobs.html?keyword=Sterling" class="company-openings">6 Active Roles →</a>
+        </div>
+      </div>
+
+      <!-- Company 5 -->
+      <div class="company-card" style="text-align: left; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="company-avatar" style="margin: 0; background: #1b3574; color: #fff;">BC</div>
+          <div>
+            <h3 class="company-name" style="margin: 0;">Blackwood Capital Markets</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-muted);">Quantitative Asset Management</span>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
+          Algorithmic liquidity providers and statistical arbitrage researchers operating across global equity venues.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 Boston, MA</span>
+          <a href="jobs.html?keyword=Blackwood" class="company-openings">11 Active Roles →</a>
+        </div>
+      </div>
+
+      <!-- Company 6 -->
+      <div class="company-card" style="text-align: left; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="company-avatar" style="margin: 0; background: #1e293b; color: #fff;">IN</div>
+          <div>
+            <h3 class="company-name" style="margin: 0;">Ironclad Networks</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-muted);">Telecom & Edge Infrastructure</span>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
+          Constructing ultra-low latency optical routing backbones and carrier-grade distributed edge compute networks.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 Seattle, WA</span>
+          <a href="jobs.html?keyword=Ironclad" class="company-openings">9 Active Roles →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">J</div>
+            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
+          </a>
+          <p class="footer-desc">
+            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Candidates</h4>
+          <ul class="footer-links">
+            <li><a href="jobs.html">Browse All Jobs</a></li>
+            <li><a href="dashboard.html">Candidate Dashboard</a></li>
+            <li><a href="dashboard.html">Saved Shortlist</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Employers</h4>
+          <ul class="footer-links">
+            <li><a href="post-job.html">Post an Opportunity</a></li>
+            <li><a href="companies.html">Company Directory</a></li>
+            <li><a href="contact.html">Corporate Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Executive Briefing</h4>
+          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jobs-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
