@@ -1,0 +1,7 @@
+/* ==========================================================================
+   JOBWORD Enterprise Job Portal - Main Stylesheet (main.css)
+   Consolidates core design system, mature blue palette & responsive rules
+   ========================================================================== */
+
+@import url('style.css');
+@import url('responsive.css');
