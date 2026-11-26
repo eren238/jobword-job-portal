@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Browse Executive & Tech Opportunities | JOBWORD</title>
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
 </head>
 <body>
 
@@ -21,7 +25,8 @@
       <div class="top-bar-right">
         <a href="post-job.html">For Employers</a>
         <a href="dashboard.html">Candidate Portal</a>
-        <a href="login.html">Corporate Sign In</a>
+        <a href="../admin/dashboard.html" style="color: #60a5fa; font-weight: 700;">⚙ Admin Console</a>
+        <a href="login.html">Sign In</a>
       </div>
     </div>
   </aside>
@@ -30,28 +35,25 @@
   <header class="site-header">
     <div class="container">
       <nav class="navbar" aria-label="Main Navigation">
-        <!-- Logo -->
         <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
           <div class="brand-icon">J</div>
           <span>JOB<span class="accent">WORD</span></span>
         </a>
 
-        <!-- Navigation Links -->
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
           <li><a href="companies.html" class="nav-link">Companies</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="../admin/dashboard.html" class="nav-link" style="color: var(--accent-blue);">Admin</a></li>
         </ul>
 
-        <!-- Right Side Nav Actions -->
         <div class="nav-actions">
           <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
           <a href="post-job.html" class="btn btn-primary btn-sm">+ Post a Job</a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
         <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
           ☰
         </button>
@@ -80,7 +82,6 @@
 
       <!-- Sidebar Filter Controls -->
       <aside class="filter-sidebar">
-        <!-- Search & Location Box -->
         <div class="filter-box">
           <div class="filter-box-header">
             <h3 class="filter-box-title">Search Parameters</h3>
@@ -98,7 +99,6 @@
           </div>
         </div>
 
-        <!-- Disciplines / Category Filter Box -->
         <div class="filter-box">
           <div class="filter-box-header">
             <h3 class="filter-box-title">Discipline / Category</h3>
@@ -155,7 +155,6 @@
           </div>
         </div>
 
-        <!-- Employment Type Filter Box -->
         <div class="filter-box">
           <div class="filter-box-header">
             <h3 class="filter-box-title">Employment Type</h3>
@@ -188,7 +187,6 @@
           </div>
         </div>
 
-        <!-- Compensation Range Slider -->
         <div class="filter-box">
           <div class="filter-box-header">
             <h3 class="filter-box-title">Minimum Compensation</h3>
@@ -207,7 +205,6 @@
 
       <!-- Main Results Area -->
       <section class="listings-main">
-        <!-- Results Topbar Controls -->
         <div class="listings-topbar">
           <div class="listings-count">
             Showing <strong id="results-count-number">8</strong> verified opportunities
@@ -232,12 +229,10 @@
           </div>
         </div>
 
-        <!-- Jobs Listing Container (Populated by JS) -->
         <div id="jobs-page-listing" class="jobs-listing-container">
           <!-- Populated dynamically by main.js -->
         </div>
 
-        <!-- Pagination -->
         <nav class="pagination-wrap" aria-label="Job listings pages">
           <button class="page-btn active">1</button>
           <button class="page-btn">2</button>
@@ -261,21 +256,14 @@
           <p class="footer-desc">
             The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
           </p>
-          <div class="social-links">
-            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
-            <a href="#" class="social-btn" aria-label="GitHub">gh</a>
-          </div>
         </div>
 
         <div>
           <h4 class="footer-title">For Candidates</h4>
           <ul class="footer-links">
             <li><a href="jobs.html">Browse All Jobs</a></li>
-            <li><a href="jobs.html?type=remote">Remote Positions</a></li>
             <li><a href="dashboard.html">Candidate Dashboard</a></li>
             <li><a href="dashboard.html">Saved Shortlist</a></li>
-            <li><a href="jobs.html?category=engineering">Tech Opportunities</a></li>
           </ul>
         </div>
 
@@ -284,42 +272,26 @@
           <ul class="footer-links">
             <li><a href="post-job.html">Post an Opportunity</a></li>
             <li><a href="companies.html">Company Directory</a></li>
-            <li><a href="dashboard.html">Enterprise Portal</a></li>
-            <li><a href="contact.html">Corporate Solutions</a></li>
-            <li><a href="login.html">Recruiter Login</a></li>
+            <li><a href="../admin/dashboard.html">Admin Console</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-title">Executive Briefing</h4>
-          <p class="footer-desc">
-            Receive weekly curated executive opportunities, market compensation benchmarks, and industry reports.
-          </p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to Executive Briefing.'); this.reset();">
-            <div class="newsletter-input-group">
-              <input type="email" placeholder="corporate.email@domain.com" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-sm">Subscribe to Briefing</button>
-          </form>
+          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>
-          © 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.
-        </div>
+        <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="contact.html">Privacy Policy</a>
-          <a href="contact.html">Terms of Service</a>
-          <a href="contact.html">Security & Compliance</a>
-          <a href="contact.html">Support</a>
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Security</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/jobs-data.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+/* ==========================================================================
+   JOBWORD Design System Constants (contants.css)
+   Executive Navy & Slate Blue Variables, Tokens, and Typography
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Primary Executive Navy & Slate Palette */
+  --primary-950: #0a1128;
+  --primary-900: #0f1c3f;
+  --primary-850: #132450;
+  --primary-800: #1b3574;
+  --primary: #1e3a8a;       /* Deep Executive Navy Blue */
+  --primary-hover: #172554; /* Midnight Navy */
+  --primary-light: #eff6ff; /* Ice Blue */
+  --primary-50: #f0f7ff;
+  --primary-100: #e0eeff;
+  --primary-200: #bae0fd;
+
+  /* Accent Blues */
+  --accent-blue: #2563eb;    /* Corporate Tech Blue */
+  --accent-cobalt: #1d4ed8;  /* Royal Cobalt */
+  --accent-cyan: #0284c7;    /* Steel Cyan */
+  --accent-steel: #475569;   /* Slate Steel */
+
+  /* Neutral & Dark Architecture */
+  --dark-950: #090d16;
+  --dark-900: #0f172a;       /* Deep Slate */
+  --dark-800: #1e293b;       /* Dark Steel Slate */
+  --dark-700: #334155;       /* Medium Slate */
+  --dark-600: #475569;
+  --dark-500: #64748b;
+
+  /* Text Colors */
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Backgrounds */
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-dark-section: #0a1128;
+
+  /* Borders & Dividers */
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #2563eb;
+
+  /* Status Tokens */
+  --badge-fulltime-bg: #eff6ff;
+  --badge-fulltime-color: #1d4ed8;
+  --badge-urgent-bg: #fef2f2;
+  --badge-urgent-color: #b91c1c;
+  --badge-remote-bg: #f0fdf4;
+  --badge-remote-color: #15803d;
+  --badge-contract-bg: #fffbeb;
+  --badge-contract-color: #b45309;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 14px 28px -4px rgba(15, 23, 42, 0.1), 0 6px 12px -2px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 20px 35px -5px rgba(15, 23, 42, 0.15), 0 10px 15px -3px rgba(15, 23, 42, 0.06);
+
+  /* Geometry & Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* Layout */
+  --container-max: 1280px;
+  --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Plus Jakarta Sans', 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative;
+}

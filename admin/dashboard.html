@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOBWORD Admin | Executive Command Center</title>
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/admin-management.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Admin Mode) -->
+  <aside class="top-bar" aria-label="Admin Navigation Topbar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>🛡️ <strong>SYSTEM ADMINISTRATOR MODE</strong> • Security Level: High</span>
+        <span>🏢 Session: Executive Placement Governance</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="../client/index.html">← Back to Client Portal</a>
+        <a href="post-job.html">+ Add Requisition</a>
+        <a href="#" onclick="SessionManager.logout();">Sign Out</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Admin Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Admin Navigation">
+        <a href="dashboard.html" class="brand-logo" aria-label="JOBWORD Admin">
+          <div class="brand-icon" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);">A</div>
+          <span>JOBWORD <span class="badge badge-navy" style="font-size: 0.65rem; margin-left: 0.35rem;">ADMIN</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="dashboard.html" class="nav-link active">Overview</a></li>
+          <li><a href="manage-jobs.html" class="nav-link">Manage Jobs</a></li>
+          <li><a href="applicants.html" class="nav-link">Applicants</a></li>
+          <li><a href="companies.html" class="nav-link">Hiring Partners</a></li>
+          <li><a href="../client/index.html" class="nav-link" style="color: var(--accent-blue);">Client Portal ↗</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="post-job.html" class="btn btn-primary btn-sm">+ Post Requisition</a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Admin Banner -->
+  <section class="inner-banner" style="background: linear-gradient(135deg, #090d16 0%, #0f1c3f 100%);">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <span>Admin Console</span>
+        <span>/</span>
+        <span>Executive Command Center</span>
+      </div>
+      <h1 class="inner-banner-title">Administrative Operations Dashboard</h1>
+      <p class="inner-banner-subtitle">
+        Monitor requisition volumes, oversee executive candidate pipeline, and manage partner approvals.
+      </p>
+    </div>
+  </section>
+
+  <!-- Admin Main Dashboard Content -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <!-- KPI Row -->
+    <div class="dash-stat-row">
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon">👥</div>
+        <div class="dash-stat-info">
+          <div class="num" id="admin-total-applicants">1,842</div>
+          <div class="lbl">Active Applicants</div>
+        </div>
+      </div>
+
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon">💼</div>
+        <div class="dash-stat-info">
+          <div class="num" id="admin-active-jobs">246</div>
+          <div class="lbl">Published Openings</div>
+        </div>
+      </div>
+
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon">🏢</div>
+        <div class="dash-stat-info">
+          <div class="num">84</div>
+          <div class="lbl">Hiring Enterprises</div>
+        </div>
+      </div>
+
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon">💰</div>
+        <div class="dash-stat-info">
+          <div class="num">$185k</div>
+          <div class="lbl">Avg Starting Comp</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Action Bar -->
+    <div style="background-color: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h3 style="font-size: 1.15rem; margin: 0;">Quick Administrator Tools</h3>
+        <p style="font-size: 0.8125rem; color: var(--text-muted); margin: 0;">Perform immediate system updates across global talent nodes.</p>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="post-job.html" class="btn btn-primary btn-sm">+ Create New Job</a>
+        <a href="manage-jobs.html" class="btn btn-outline btn-sm">Audit Requisitions</a>
+        <a href="applicants.html" class="btn btn-outline btn-sm">Review Candidate CVs</a>
+      </div>
+    </div>
+
+    <!-- Section 1: Recent Candidate Applications Table -->
+    <div class="dash-table-card" style="margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin: 0;">Recent Candidate Submissions</h3>
+          <p style="font-size: 0.8125rem; color: var(--text-muted); margin: 0;">Latest applicants awaiting executive screening.</p>
+        </div>
+        <a href="applicants.html" class="btn btn-outline btn-sm">View All Candidates →</a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Candidate</th>
+              <th>Target Employer</th>
+              <th>Date Transmitted</th>
+              <th>Status</th>
+              <th>Administrative Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-applicants-tbody">
+            <!-- Populated by admin-management.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 2: Active Job Requisitions Table -->
+    <div class="dash-table-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin: 0;">Active Portal Requisitions</h3>
+          <p style="font-size: 0.8125rem; color: var(--text-muted); margin: 0;">Live enterprise postings currently open for submissions.</p>
+        </div>
+        <a href="manage-jobs.html" class="btn btn-outline btn-sm">Manage All Openings →</a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Role & Discipline</th>
+              <th>Hiring Company</th>
+              <th>Compensation Range</th>
+              <th>Audit Status</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody id="admin-jobs-tbody">
+            <!-- Populated by admin-management.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top: 0; border: none;">
+        <div>© 2026 JOBWORD Inc. System Administration Portal • Enterprise Navy Edition.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="../client/contact.html">Support</a>
+          <a href="../client/index.html">Client Portal</a>
+          <a href="dashboard.html">Admin Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

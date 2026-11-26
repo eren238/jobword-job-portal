@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Candidate & Executive Dashboard | JOBWORD</title>
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
 </head>
 <body>
 
@@ -20,8 +24,9 @@
       </div>
       <div class="top-bar-right">
         <a href="post-job.html">For Employers</a>
-        <a href="dashboard.html">Candidate Portal</a>
-        <a href="login.html">Corporate Sign In</a>
+        <a href="dashboard.html" class="active">Candidate Portal</a>
+        <a href="../admin/dashboard.html" style="color: #60a5fa; font-weight: 700;">⚙ Admin Console</a>
+        <a href="login.html">Sign In</a>
       </div>
     </div>
   </aside>
@@ -41,6 +46,7 @@
           <li><a href="companies.html" class="nav-link">Companies</a></li>
           <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="../admin/dashboard.html" class="nav-link" style="color: var(--accent-blue);">Admin</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -104,7 +110,6 @@
 
         <!-- Tab 1: Overview -->
         <div id="tab-overview" class="dashboard-tab-content">
-          <!-- Metric Stat Cards -->
           <div class="dash-stat-row">
             <div class="dash-stat-card">
               <div class="dash-stat-icon">📨</div>
@@ -179,7 +184,7 @@
           </div>
         </div>
 
-        <!-- Tab 2: Applications (shared view) -->
+        <!-- Tab 2: Applications -->
         <div id="tab-applications" class="dashboard-tab-content" style="display: none;">
           <div class="dash-table-card">
             <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">All Submitted Applications</h3>
@@ -230,9 +235,7 @@
               Review and apply directly to positions you have bookmarked.
             </p>
           </div>
-          <div id="dashboard-saved-container" class="jobs-listing-container">
-            <!-- Populated by JS -->
-          </div>
+          <div id="dashboard-saved-container" class="jobs-listing-container"></div>
         </div>
 
         <!-- Tab 4: Resume & Credentials -->
@@ -240,7 +243,7 @@
           <div class="dash-table-card">
             <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Executive Credentials & CV</h3>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.75rem;">
-              Manage your verified executive profile documents. Organizations with active requisitions can inspect verified resumes.
+              Manage your verified executive profile documents.
             </p>
 
             <div style="border: 2px dashed var(--border-strong); border-radius: var(--radius-md); padding: 2.5rem; text-align: center; background-color: var(--bg-page); margin-bottom: 2rem;">
@@ -276,41 +279,6 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo">
-            <div class="brand-icon">J</div>
-            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
-          </a>
-          <p class="footer-desc">
-            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-title">For Candidates</h4>
-          <ul class="footer-links">
-            <li><a href="jobs.html">Browse All Jobs</a></li>
-            <li><a href="dashboard.html">Candidate Dashboard</a></li>
-            <li><a href="dashboard.html">Saved Shortlist</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">For Employers</h4>
-          <ul class="footer-links">
-            <li><a href="post-job.html">Post an Opportunity</a></li>
-            <li><a href="companies.html">Company Directory</a></li>
-            <li><a href="contact.html">Corporate Solutions</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Executive Briefing</h4>
-          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
-        </div>
-      </div>
-
       <div class="footer-bottom">
         <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
         <div style="display: flex; gap: 1.5rem;">
@@ -322,8 +290,5 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/jobs-data.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>

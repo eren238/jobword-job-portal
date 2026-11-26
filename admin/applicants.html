@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Pipeline | JOBWORD Admin</title>
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/admin-management.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>🛡️ <strong>SYSTEM ADMINISTRATOR MODE</strong></span>
+      </div>
+      <div class="top-bar-right">
+        <a href="../client/index.html">← Client Portal</a>
+        <a href="dashboard.html">Admin Dashboard</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Admin Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="dashboard.html" class="brand-logo">
+          <div class="brand-icon" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);">A</div>
+          <span>JOBWORD <span class="badge badge-navy" style="font-size: 0.65rem;">ADMIN</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="dashboard.html" class="nav-link">Overview</a></li>
+          <li><a href="manage-jobs.html" class="nav-link">Manage Jobs</a></li>
+          <li><a href="applicants.html" class="nav-link active">Applicants</a></li>
+          <li><a href="companies.html" class="nav-link">Hiring Partners</a></li>
+          <li><a href="../client/index.html" class="nav-link" style="color: var(--accent-blue);">Client Portal ↗</a></li>
+        </ul>
+
+        <button class="mobile-nav-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="inner-banner" style="background: linear-gradient(135deg, #090d16 0%, #0f1c3f 100%);">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="dashboard.html">Admin</a>
+        <span>/</span>
+        <span>Applicants Governance</span>
+      </div>
+      <h1 class="inner-banner-title">Executive Candidate Pipeline</h1>
+      <p class="inner-banner-subtitle">
+        Review applicant credentials, interview statuses, and recruiter placements.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div class="dash-table-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.25rem; margin: 0;">Verified Candidate Submissions</h3>
+        <span class="badge badge-remote">Live Recruiter Feed</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Candidate</th>
+              <th>Target Employer</th>
+              <th>Date Transmitted</th>
+              <th>Status</th>
+              <th>Administrative Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-applicants-tbody">
+            <!-- Populated by admin-management.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top: 0; border: none;">
+        <div>© 2026 JOBWORD Inc. Administrative Console.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Hiring Partners | JOBWORD Admin</title>
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/admin-management.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>🛡️ <strong>SYSTEM ADMINISTRATOR MODE</strong></span>
+      </div>
+      <div class="top-bar-right">
+        <a href="../client/index.html">← Client Portal</a>
+        <a href="dashboard.html">Admin Dashboard</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Admin Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="dashboard.html" class="brand-logo">
+          <div class="brand-icon" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);">A</div>
+          <span>JOBWORD <span class="badge badge-navy" style="font-size: 0.65rem;">ADMIN</span></span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="dashboard.html" class="nav-link">Overview</a></li>
+          <li><a href="manage-jobs.html" class="nav-link">Manage Jobs</a></li>
+          <li><a href="applicants.html" class="nav-link">Applicants</a></li>
+          <li><a href="companies.html" class="nav-link active">Hiring Partners</a></li>
+          <li><a href="../client/index.html" class="nav-link" style="color: var(--accent-blue);">Client Portal ↗</a></li>
+        </ul>
+
+        <button class="mobile-nav-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="inner-banner" style="background: linear-gradient(135deg, #090d16 0%, #0f1c3f 100%);">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="dashboard.html">Admin</a>
+        <span>/</span>
+        <span>Hiring Partners</span>
+      </div>
+      <h1 class="inner-banner-title">Enterprise Partner Approvals</h1>
+      <p class="inner-banner-subtitle">
+        Authorize enterprise recruiting accounts and manage verified hiring status.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div class="dash-table-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.25rem; margin: 0;">Verified Corporate Accounts</h3>
+        <button class="btn btn-primary btn-sm" onclick="showToast('Enterprise verification invite dispatched.');">+ Authorize Employer</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Enterprise Organization</th>
+              <th>Headquarters</th>
+              <th>Active Openings</th>
+              <th>Vetting Tier</th>
+              <th>Administrative Control</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Apex Global Technologies</strong></td>
+              <td>New York, NY</td>
+              <td>14 Requisitions</td>
+              <td><span class="badge badge-remote">SOC2 Tier-1</span></td>
+              <td><button class="btn btn-outline btn-sm" onclick="showToast('Partner contract active.', 'info')">Manage Tier</button></td>
+            </tr>
+            <tr>
+              <td><strong>Vanguard Trust Partners</strong></td>
+              <td>Washington, DC</td>
+              <td>8 Requisitions</td>
+              <td><span class="badge badge-remote">SOC2 Tier-1</span></td>
+              <td><button class="btn btn-outline btn-sm" onclick="showToast('Partner contract active.', 'info')">Manage Tier</button></td>
+            </tr>
+            <tr>
+              <td><strong>Cognitive Nexus Labs</strong></td>
+              <td>San Francisco, CA</td>
+              <td>19 Requisitions</td>
+              <td><span class="badge badge-fulltime">Verified High Growth</span></td>
+              <td><button class="btn btn-outline btn-sm" onclick="showToast('Partner contract active.', 'info')">Manage Tier</button></td>
+            </tr>
+            <tr>
+              <td><strong>Sterling & Mercer Holdings</strong></td>
+              <td>Chicago, IL</td>
+              <td>6 Requisitions</td>
+              <td><span class="badge badge-remote">Institutional</span></td>
+              <td><button class="btn btn-outline btn-sm" onclick="showToast('Partner contract active.', 'info')">Manage Tier</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top: 0; border: none;">
+        <div>© 2026 JOBWORD Inc. Administrative Console.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

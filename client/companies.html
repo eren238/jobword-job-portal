@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise Employers Directory | JOBWORD</title>
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50%' y='65%' font-size='55' font-weight='800' fill='white' text-anchor='middle'>J</text></svg>">
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
 </head>
 <body>
 
@@ -21,7 +25,8 @@
       <div class="top-bar-right">
         <a href="post-job.html">For Employers</a>
         <a href="dashboard.html">Candidate Portal</a>
-        <a href="login.html">Corporate Sign In</a>
+        <a href="../admin/dashboard.html" style="color: #60a5fa; font-weight: 700;">⚙ Admin Console</a>
+        <a href="login.html">Sign In</a>
       </div>
     </div>
   </aside>
@@ -41,6 +46,7 @@
           <li><a href="companies.html" class="nav-link active">Companies</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="../admin/dashboard.html" class="nav-link" style="color: var(--accent-blue);">Admin</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -72,7 +78,6 @@
 
   <!-- Directory Section -->
   <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
-    <!-- Directory Search Bar -->
     <div style="background-color: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); width: 100%;">
       <div class="company-filter-grid">
         <input type="text" id="company-search-input" class="form-control" placeholder="Search by organization name or industry...">
@@ -89,7 +94,6 @@
 
     <!-- Company Grid -->
     <div class="companies-grid">
-      <!-- Company 1 -->
       <div class="company-card" style="text-align: left; padding: 2rem;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
           <div class="company-avatar" style="margin: 0; background: #0f1c3f; color: #fff;">AG</div>
@@ -107,7 +111,6 @@
         </div>
       </div>
 
-      <!-- Company 2 -->
       <div class="company-card" style="text-align: left; padding: 2rem;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
           <div class="company-avatar" style="margin: 0; background: #1e3a8a; color: #fff;">VT</div>
@@ -125,7 +128,6 @@
         </div>
       </div>
 
-      <!-- Company 3 -->
       <div class="company-card" style="text-align: left; padding: 2rem;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
           <div class="company-avatar" style="margin: 0; background: #172554; color: #fff;">CN</div>
@@ -143,7 +145,6 @@
         </div>
       </div>
 
-      <!-- Company 4 -->
       <div class="company-card" style="text-align: left; padding: 2rem;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
           <div class="company-avatar" style="margin: 0; background: #0a1128; color: #fff;">SM</div>
@@ -160,83 +161,12 @@
           <a href="jobs.html?keyword=Sterling" class="company-openings">6 Active Roles →</a>
         </div>
       </div>
-
-      <!-- Company 5 -->
-      <div class="company-card" style="text-align: left; padding: 2rem;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-          <div class="company-avatar" style="margin: 0; background: #1b3574; color: #fff;">BC</div>
-          <div>
-            <h3 class="company-name" style="margin: 0;">Blackwood Capital Markets</h3>
-            <span style="font-size: 0.8125rem; color: var(--text-muted);">Quantitative Asset Management</span>
-          </div>
-        </div>
-        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
-          Algorithmic liquidity providers and statistical arbitrage researchers operating across global equity venues.
-        </p>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
-          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 Boston, MA</span>
-          <a href="jobs.html?keyword=Blackwood" class="company-openings">11 Active Roles →</a>
-        </div>
-      </div>
-
-      <!-- Company 6 -->
-      <div class="company-card" style="text-align: left; padding: 2rem;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-          <div class="company-avatar" style="margin: 0; background: #1e293b; color: #fff;">IN</div>
-          <div>
-            <h3 class="company-name" style="margin: 0;">Ironclad Networks</h3>
-            <span style="font-size: 0.8125rem; color: var(--text-muted);">Telecom & Edge Infrastructure</span>
-          </div>
-        </div>
-        <p style="font-size: 0.875rem; color: var(--text-body); margin-bottom: 1.25rem;">
-          Constructing ultra-low latency optical routing backbones and carrier-grade distributed edge compute networks.
-        </p>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
-          <span style="font-size: 0.8125rem; color: var(--text-muted);">📍 Seattle, WA</span>
-          <a href="jobs.html?keyword=Ironclad" class="company-openings">9 Active Roles →</a>
-        </div>
-      </div>
     </div>
   </main>
 
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo">
-            <div class="brand-icon">J</div>
-            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
-          </a>
-          <p class="footer-desc">
-            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-title">For Candidates</h4>
-          <ul class="footer-links">
-            <li><a href="jobs.html">Browse All Jobs</a></li>
-            <li><a href="dashboard.html">Candidate Dashboard</a></li>
-            <li><a href="dashboard.html">Saved Shortlist</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">For Employers</h4>
-          <ul class="footer-links">
-            <li><a href="post-job.html">Post an Opportunity</a></li>
-            <li><a href="companies.html">Company Directory</a></li>
-            <li><a href="contact.html">Corporate Solutions</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Executive Briefing</h4>
-          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
-        </div>
-      </div>
-
       <div class="footer-bottom">
         <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
         <div style="display: flex; gap: 1.5rem;">
@@ -248,8 +178,5 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/jobs-data.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>

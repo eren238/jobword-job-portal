@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOBWORD | Executive Job Portal & Recruitment Platform</title>
+  <link href="../all-images/icon-images/icon.png" rel="shortcut icon" type="image/png">
+  <link href="../styles/icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+  <link href="../styles/contants.css" rel="stylesheet" type="text/css">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  <script src="../js/session-manager.js"></script>
+  <script src="../js/modal-handler.js"></script>
+  <script src="../js/jobs-data.js"></script>
+  <script src="../js/main.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Quick Contacts">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>📍 Global Operations: New York • London • Zurich • Singapore</span>
+        <span>📞 Enterprise Hotline: +1 (800) 555-0199</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="post-job.html">For Employers</a>
+        <a href="dashboard.html">Candidate Portal</a>
+        <a href="../admin/dashboard.html" style="color: #60a5fa; font-weight: 700;">⚙ Admin Console</a>
+        <a href="login.html">Sign In</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="JOBWORD Home">
+          <div class="brand-icon">J</div>
+          <span>JOB<span class="accent">WORD</span></span>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="../admin/dashboard.html" class="nav-link" style="color: var(--accent-blue);">Admin</a></li>
+        </ul>
+
+        <!-- Right Side Nav Actions -->
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="post-job.html" class="btn btn-primary btn-sm">+ Post a Job</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Over 45,000+ Verified Executive & Tech Positions</span>
+          </div>
+
+          <h1 class="hero-title">
+            Connecting Elite Talent With <span class="highlight">Industry Leaders</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            The premier employment network for software architects, quantitative researchers, executive directors, and specialized industry professionals.
+          </p>
+
+          <!-- Search Component -->
+          <div class="hero-search-card">
+            <form action="jobs.html" method="GET" class="hero-search-form">
+              <div class="search-field keyword-field">
+                <i>🔍</i>
+                <input type="text" name="keyword" placeholder="Job title, skills, or company..." aria-label="Job keywords">
+              </div>
+
+              <div class="search-field location-field">
+                <i>📍</i>
+                <input type="text" name="location" placeholder="City, state, or remote..." aria-label="Location">
+              </div>
+
+              <div class="search-field category-field">
+                <i>💼</i>
+                <select name="category" aria-label="Job category">
+                  <option value="">All Disciplines</option>
+                  <option value="engineering">Software & Cloud</option>
+                  <option value="data-ai">AI & Data Science</option>
+                  <option value="finance">Finance & Banking</option>
+                  <option value="security">Cybersecurity</option>
+                  <option value="executive">Executive & Strategy</option>
+                  <option value="product">Product & Design</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-search">
+                Search Jobs
+              </button>
+            </form>
+          </div>
+
+          <!-- Popular Search Tags -->
+          <div class="popular-tags">
+            <strong>Trending Searches:</strong>
+            <a href="jobs.html?keyword=Cloud">Cloud Architect</a>
+            <a href="jobs.html?keyword=Machine+Learning">AI / ML</a>
+            <a href="jobs.html?keyword=Cybersecurity">Cybersecurity</a>
+            <a href="jobs.html?keyword=Analyst">Quant Finance</a>
+            <a href="jobs.html?keyword=Director">Executive VP</a>
+          </div>
+        </div>
+
+        <!-- Right Side Visual Executive Card -->
+        <div class="hero-visual">
+          <div class="hero-visual-wrapper">
+            <!-- Floating Badge: Top Right Offer -->
+            <div class="floating-hero-card card-offer">
+              <div class="f-icon blue">💼</div>
+              <div class="f-info">
+                <div class="f-title">Apex Global Tech</div>
+                <div class="f-sub">Principal Cloud Architect</div>
+                <div class="f-highlight">$195,000 / yr • Transmitted</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Middle Left Verified -->
+            <div class="floating-hero-card card-verified">
+              <div class="f-icon green">🛡️</div>
+              <div class="f-info">
+                <div class="f-title">100% Vetted Profile</div>
+                <div class="f-sub">SOC2 & ISO 27001 Audited</div>
+              </div>
+            </div>
+
+            <!-- Centerpiece: Masculine Executive Portrait -->
+            <div class="hero-portrait-frame">
+              <img src="../all-images/body-images/hero-executive.jpg" alt="Executive Career Leader" loading="eager">
+              <div class="portrait-overlay-gradient"></div>
+              <div class="portrait-caption">
+                <div>
+                  <div class="cap-name">Alexander Vance</div>
+                  <div class="cap-role">VP of Cloud Architecture</div>
+                </div>
+                <span class="badge badge-remote" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Placed</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Bottom Left Stats -->
+            <div class="floating-hero-card card-stats">
+              <div class="f-icon navy">📈</div>
+              <div class="f-info">
+                <div class="f-title">185,000+ Placed Leaders</div>
+                <div class="f-sub">98.4% Retention • Tier-1 Direct</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Metrics / Stats Strip -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">185,000+</div>
+          <div class="stat-label">Active Qualified Candidates</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12,400+</div>
+          <div class="stat-label">Verified Hiring Enterprises</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">45,800+</div>
+          <div class="stat-label">Successful Placements</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.2%</div>
+          <div class="stat-label">Enterprise Retention Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Categories Section -->
+  <section class="section-categories">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Explore Industries</span>
+        <h2 class="section-title">Popular Employment Disciplines</h2>
+        <p class="section-subtitle">
+          Curated roles across high-growth engineering, enterprise finance, security, and senior leadership.
+        </p>
+      </div>
+
+      <div class="categories-grid">
+        <a href="jobs.html?category=engineering" class="category-card">
+          <div class="category-icon-box">💻</div>
+          <h3 class="category-title">Software & Cloud</h3>
+          <span class="category-count">1,240 Openings</span>
+        </a>
+
+        <a href="jobs.html?category=data-ai" class="category-card">
+          <div class="category-icon-box">🧠</div>
+          <h3 class="category-title">AI & Data Science</h3>
+          <span class="category-count">840 Openings</span>
+        </a>
+
+        <a href="jobs.html?category=security" class="category-card">
+          <div class="category-icon-box">🛡️</div>
+          <h3 class="category-title">Cybersecurity</h3>
+          <span class="category-count">612 Openings</span>
+        </a>
+
+        <a href="jobs.html?category=finance" class="category-card">
+          <div class="category-icon-box">📈</div>
+          <h3 class="category-title">Finance & Banking</h3>
+          <span class="category-count">930 Openings</span>
+        </a>
+
+        <a href="jobs.html?category=executive" class="category-card">
+          <div class="category-icon-box">👔</div>
+          <h3 class="category-title">Executive & Strategy</h3>
+          <span class="category-count">380 Openings</span>
+        </a>
+
+        <a href="jobs.html?category=product" class="category-card">
+          <div class="category-icon-box">🎨</div>
+          <h3 class="category-title">Product & Design</h3>
+          <span class="category-count">510 Openings</span>
+        </a>
+
+        <a href="jobs.html?keyword=Legal" class="category-card">
+          <div class="category-icon-box">⚖️</div>
+          <h3 class="category-title">Legal & Compliance</h3>
+          <span class="category-count">290 Openings</span>
+        </a>
+
+        <a href="jobs.html?keyword=Operations" class="category-card">
+          <div class="category-icon-box">⚙️</div>
+          <h3 class="category-title">Operations & Logistics</h3>
+          <span class="category-count">470 Openings</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Jobs Section -->
+  <section class="section-jobs">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Featured Opportunities</span>
+        <h2 class="section-title">Latest Priority Positions</h2>
+        <p class="section-subtitle">
+          Direct-hire requisitions from vetted corporate partners and top technology institutions.
+        </p>
+      </div>
+
+      <div class="jobs-filter-tabs home-job-tabs">
+        <button class="tab-btn active" data-filter="recent">All Openings</button>
+        <button class="tab-btn" data-filter="remote">Remote Only</button>
+        <button class="tab-btn" data-filter="fulltime">Full-Time Corporate</button>
+      </div>
+
+      <div class="jobs-grid" id="home-featured-jobs">
+        <!-- Rendered dynamically by main.js from jobs-data.js -->
+      </div>
+
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="jobs.html" class="btn btn-primary btn-lg">
+          Browse All 4,200+ Active Vacancies →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">J</div>
+            <span style="color: #ffffff;">JOB<span class="accent">WORD</span></span>
+          </a>
+          <p class="footer-desc">
+            The global executive career marketplace engineered for high-precision matching between world-class organizations and exceptional talent.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Candidates</h4>
+          <ul class="footer-links">
+            <li><a href="jobs.html">Browse All Jobs</a></li>
+            <li><a href="dashboard.html">Candidate Dashboard</a></li>
+            <li><a href="dashboard.html">Saved Shortlist</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">For Employers</h4>
+          <ul class="footer-links">
+            <li><a href="post-job.html">Post an Opportunity</a></li>
+            <li><a href="companies.html">Company Directory</a></li>
+            <li><a href="../admin/dashboard.html">Admin Console</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Executive Briefing</h4>
+          <p class="footer-desc">Receive curated executive opportunities and compensation benchmarks.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 JOBWORD Inc. All rights reserved. Built with Enterprise Navy Design System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
