@@ -769,8 +769,8 @@ button, input, select, textarea {
 .hero-portrait-frame {
   position: relative;
   z-index: 2;
-  width: 340px;
-  height: 430px;
+  width: 350px;
+  height: 440px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
@@ -781,9 +781,9 @@ button, input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 15%;
   display: block;
-  filter: contrast(1.05) brightness(0.98);
+  filter: contrast(1.04) brightness(0.99);
   transition: transform 0.4s ease;
 }
 
@@ -797,8 +797,35 @@ button, input, select, textarea {
   left: 0;
   width: 100%;
   height: 35%;
-  background: linear-gradient(to top, rgba(10, 17, 40, 0.9) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(10, 17, 40, 0.92) 0%, transparent 100%);
   pointer-events: none;
+}
+
+/* Portrait Top Glass Pill (Never obscures face) */
+.portrait-top-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(10, 17, 40, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #bfdbfe;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill, 9999px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.2px;
+}
+
+.portrait-top-pill i {
+  color: #38bdf8;
+  font-size: 0.85rem;
 }
 
 .portrait-caption {
@@ -824,16 +851,17 @@ button, input, select, textarea {
   color: #93c5fd;
 }
 
-/* Floating Executive Badges */
+/* Floating Executive Badges (Positioned cleanly outside face perimeter) */
 .floating-hero-card {
   position: absolute;
   z-index: 4;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-md);
   box-shadow: 0 15px 35px -5px rgba(10, 17, 40, 0.35), 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 0.9rem 1.15rem;
+  padding: 0.85rem 1.15rem;
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -841,21 +869,15 @@ button, input, select, textarea {
 }
 
 .floating-hero-card.card-offer {
-  top: 15px;
-  right: -30px;
+  top: -18px;
+  right: -35px;
   animation: floatCardTop 4.5s ease-in-out infinite alternate;
 }
 
 .floating-hero-card.card-stats {
-  bottom: 25px;
+  bottom: -20px;
   left: -35px;
   animation: floatCardBottom 5s ease-in-out infinite alternate;
-}
-
-.floating-hero-card.card-verified {
-  top: 80px;
-  left: -40px;
-  animation: floatCardLeft 4s ease-in-out infinite alternate;
 }
 
 @keyframes floatCardTop {
