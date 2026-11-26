@@ -1,5 +1,5 @@
 /**
- * JOBWORD - Enterprise Job Portal Main JavaScript
+ * RemotelyAligned - Enterprise Job Portal Main JavaScript
  * Interactive controllers for navigation, dynamic filters, job cards, modals, and toasts
  */
 
@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
    Toast Notification System
    ========================================================================== */
 function showToast(message, type = "success") {
-  let toast = document.getElementById("jobword-toast");
+  let toast = document.getElementById("remotelyaligned-toast") || document.getElementById("jobword-toast");
   if (!toast) {
     toast = document.createElement("div");
-    toast.id = "jobword-toast";
+    toast.id = "remotelyaligned-toast";
     toast.className = "toast-notice";
     document.body.appendChild(toast);
   }

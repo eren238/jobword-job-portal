@@ -1,5 +1,5 @@
 /**
- * JOBWORD Session Manager
+ * RemotelyAligned Session Manager
  * Manages Client and Admin authentication states, permissions, and active sessions
  */
 
@@ -7,7 +7,7 @@ const SessionManager = {
   // Current user state
   getCurrentUser() {
     try {
-      const user = localStorage.getItem("jobword_session_user");
+      const user = localStorage.getItem("remotelyaligned_session_user") || localStorage.getItem("jobword_session_user");
       return user ? JSON.parse(user) : {
         name: "Alexander Vance",
         email: "alexander.vance@executive.io",
@@ -28,11 +28,12 @@ const SessionManager = {
       token: "jwt_session_" + Date.now(),
       avatar: role === "admin" ? "MS" : "AV"
     };
-    localStorage.setItem("jobword_session_user", JSON.stringify(user));
+    localStorage.setItem("remotelyaligned_session_user", JSON.stringify(user));
     return user;
   },
 
   logout() {
+    localStorage.removeItem("remotelyaligned_session_user");
     localStorage.removeItem("jobword_session_user");
     window.location.href = "../client/login.html";
   },

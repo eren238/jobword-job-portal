@@ -1,5 +1,5 @@
 /**
- * JOBWORD Modal Handler
+ * RemotelyAligned Modal Handler
  * Standardized controller for opening, closing, and submitting interactive modals
  */
 

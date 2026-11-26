@@ -1,9 +1,46 @@
 /**
- * JOBWORD - Enterprise Job Portal Data Store
+ * RemotelyAligned - Enterprise Job Portal Data Store
  * Structured database of jobs, companies, and category taxonomies
  */
 
 const JOB_DATABASE = [
+  {
+    id: "job-100",
+    title: "Global Principal Remote Solutions Architect",
+    company: "RemotelyAligned",
+    logoText: "RA",
+    logoBg: "#1e3a8a",
+    category: "engineering",
+    categoryName: "Software & Cloud",
+    type: "Full Time (100% Remote)",
+    badgeType: "remote",
+    isUrgent: true,
+    location: "Global Remote (Work from Anywhere)",
+    salaryMin: 185000,
+    salaryMax: 220000,
+    salaryDisplay: "$185k - $220k / year",
+    experience: "8+ Years",
+    postedDate: "Just now",
+    overview: "RemotelyAligned is seeking a Global Principal Solutions Architect to design distributed cloud engineering architectures, lead worldwide talent integration, and set enterprise standards for asynchronous collaboration.",
+    responsibilities: [
+      "Design and deploy resilient, distributed systems across multi-region cloud infrastructures.",
+      "Partner with multinational engineering teams to optimize remote development workflows and developer experience.",
+      "Establish automated continuous deployment practices, zero-trust perimeter security, and global observability.",
+      "Mentor distributed senior architects and contribute to RemotelyAligned open-source engineering initiatives."
+    ],
+    requirements: [
+      "8+ years of high-scale cloud engineering experience with AWS, GCP, or Azure.",
+      "Proven success leading autonomous engineering teams across multiple time zones.",
+      "Deep expertise in Kubernetes, distributed caching, IaC (Terraform), and microservice governance.",
+      "Exceptional asynchronous communication and documentation skills."
+    ],
+    benefits: [
+      "100% remote flexibility with home office & technology stipend ($3,500/yr)",
+      "Comprehensive global healthcare and wellness coverage",
+      "Competitive equity package and annual performance profit sharing",
+      "Unlimited paid time off with mandatory minimum leave policies"
+    ]
+  },
   {
     id: "job-101",
     title: "Senior Cloud Infrastructure Architect",
@@ -306,10 +343,10 @@ const JOB_DATABASE = [
 const JobStorage = {
   getSavedJobs() {
     try {
-      const saved = localStorage.getItem("jobword_saved_jobs");
-      return saved ? JSON.parse(saved) : ["job-101", "job-103"];
+      const saved = localStorage.getItem("remotelyaligned_saved_jobs") || localStorage.getItem("jobword_saved_jobs");
+      return saved ? JSON.parse(saved) : ["job-100", "job-101", "job-103"];
     } catch (e) {
-      return ["job-101"];
+      return ["job-100", "job-101"];
     }
   },
 
@@ -323,7 +360,7 @@ const JobStorage = {
       saved.push(jobId);
       isSaved = true;
     }
-    localStorage.setItem("jobword_saved_jobs", JSON.stringify(saved));
+    localStorage.setItem("remotelyaligned_saved_jobs", JSON.stringify(saved));
     return isSaved;
   },
 
@@ -333,10 +370,18 @@ const JobStorage = {
 
   getApplications() {
     try {
-      const apps = localStorage.getItem("jobword_applications");
+      const apps = localStorage.getItem("remotelyaligned_applications") || localStorage.getItem("jobword_applications");
       return apps ? JSON.parse(apps) : [
         {
           id: "app-1",
+          jobTitle: "Global Principal Remote Solutions Architect",
+          company: "RemotelyAligned",
+          appliedDate: "Nov 26, 2026",
+          status: "Interview Scheduled",
+          statusClass: "badge-remote"
+        },
+        {
+          id: "app-2",
           jobTitle: "Senior Cloud Infrastructure Architect",
           company: "Apex Global Technologies",
           appliedDate: "Nov 22, 2026",
@@ -344,7 +389,7 @@ const JobStorage = {
           statusClass: "badge-fulltime"
         },
         {
-          id: "app-2",
+          id: "app-3",
           jobTitle: "Principal Machine Learning Engineer",
           company: "Cognitive Nexus Labs",
           appliedDate: "Nov 20, 2026",
@@ -376,7 +421,7 @@ const JobStorage = {
       statusClass: "badge-fulltime"
     };
     apps.unshift(newApp);
-    localStorage.setItem("jobword_applications", JSON.stringify(apps));
+    localStorage.setItem("remotelyaligned_applications", JSON.stringify(apps));
     return newApp;
   }
 };

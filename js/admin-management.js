@@ -1,5 +1,5 @@
 /**
- * JOBWORD Admin Portal Management
+ * RemotelyAligned Admin Portal Management
  * Administrative controllers for reviewing requisitions, candidate approvals, and metrics
  */
 
