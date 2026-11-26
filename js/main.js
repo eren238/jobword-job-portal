@@ -415,6 +415,26 @@ function initJobDetailPage() {
 
   if (openModalBtn && modal) {
     openModalBtn.addEventListener("click", () => {
+      if (typeof SessionManager !== "undefined" && !SessionManager.isLoggedIn()) {
+        showToast("Please sign in to submit your executive application.", "info");
+        setTimeout(() => {
+          const currentUrl = encodeURIComponent(window.location.href);
+          window.location.href = `login.html?redirect=${currentUrl}&reason=auth_required`;
+        }, 1200);
+        return;
+      }
+
+      // Pre-fill user data
+      if (typeof SessionManager !== "undefined") {
+        const user = SessionManager.getCurrentUser();
+        if (user) {
+          const nameInput = document.getElementById("applicant-name");
+          const emailInput = document.getElementById("applicant-email");
+          if (nameInput && !nameInput.value) nameInput.value = user.name;
+          if (emailInput && !emailInput.value) emailInput.value = user.email;
+        }
+      }
+
       modal.classList.add("active");
     });
   }
@@ -480,6 +500,19 @@ function initDashboardPage() {
   const appTableBody = document.getElementById("dashboard-applications-body");
   if (!appTableBody || typeof JobStorage === "undefined") return;
 
+  // Populate logged-in user profile info
+  if (typeof SessionManager !== "undefined") {
+    const user = SessionManager.getCurrentUser();
+    if (user) {
+      const nameEl = document.querySelector(".dashboard-user-name");
+      const avatarEl = document.querySelector(".dashboard-avatar");
+      const roleEl = document.querySelector(".dashboard-user-role");
+      if (nameEl) nameEl.textContent = user.name;
+      if (avatarEl) avatarEl.textContent = user.avatar;
+      if (roleEl) roleEl.textContent = user.role === "admin" ? "System Administrator" : "Executive Talent Member";
+    }
+  }
+
   renderDashboardApplications();
   renderDashboardSavedJobs();
 
@@ -539,32 +572,92 @@ function renderDashboardSavedJobs() {
 }
 
 /* ==========================================================================
-   Authentication Toggle (login.html)
+   Authentication & Route Controller (login.html)
    ========================================================================== */
 function initAuthPage() {
+  const authForm = document.getElementById("auth-login-form");
+  if (!authForm) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectTarget = urlParams.get("redirect");
+  const requestedRole = urlParams.get("role");
+  const authReason = urlParams.get("reason");
+
+  // Display notice banner if redirected for required authentication
+  const authHeader = document.querySelector(".auth-header");
+  if (authHeader && authReason && !document.getElementById("auth-guard-notice")) {
+    const notice = document.createElement("div");
+    notice.id = "auth-guard-notice";
+    notice.style.cssText = "background: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; border-radius: 8px; padding: 0.85rem 1rem; margin-top: 1rem; font-size: 0.875rem; text-align: left; display: flex; align-items: center; gap: 0.5rem;";
+    
+    if (authReason === "admin_required" || requestedRole === "admin") {
+      notice.innerHTML = `<i class="bi bi-shield-lock-fill" style="font-size: 1.1rem; color: #2563eb;"></i> <span><strong>Administrator Credentials Required:</strong> Please authenticate with director credentials to enter the executive console.</span>`;
+    } else {
+      notice.innerHTML = `<i class="bi bi-lock-fill" style="font-size: 1.1rem; color: #2563eb;"></i> <span><strong>Restricted Access:</strong> You must sign in to view the executive dashboard, manage active applications, or post requisitions.</span>`;
+    }
+    authHeader.appendChild(notice);
+  }
+
+  // Pre-select role tab if specified
   const roleButtons = document.querySelectorAll(".auth-role-btn");
-  if (roleButtons.length === 0) return;
+  let activeRole = "candidate";
+
+  if (requestedRole) {
+    activeRole = requestedRole;
+    roleButtons.forEach(b => {
+      b.classList.toggle("active", b.dataset.role === requestedRole);
+    });
+    const title = document.getElementById("auth-form-title");
+    if (title) {
+      if (requestedRole === "admin") title.textContent = "Executive Administrator Sign In";
+      else if (requestedRole === "employer") title.textContent = "Employer Portal Login";
+      else title.textContent = "Candidate Account Login";
+    }
+  }
 
   roleButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       roleButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      const role = btn.dataset.role;
+      activeRole = btn.dataset.role;
       const title = document.getElementById("auth-form-title");
       if (title) {
-        title.textContent = role === "employer" ? "Employer Portal Login" : "Candidate Account Login";
+        if (activeRole === "admin") title.textContent = "Executive Administrator Sign In";
+        else if (activeRole === "employer") title.textContent = "Employer Portal Login";
+        else title.textContent = "Candidate Account Login";
+      }
+
+      // Populate sample credentials for convenience
+      const emailInput = document.getElementById("auth-email");
+      if (emailInput) {
+        if (activeRole === "admin") {
+          emailInput.value = "admin@remotelyaligned.com";
+        } else if (activeRole === "employer") {
+          emailInput.value = "recruiting@apexglobal.tech";
+        } else {
+          emailInput.value = "alexander.vance@executive.io";
+        }
       }
     });
   });
 
-  const authForm = document.getElementById("auth-login-form");
-  if (authForm) {
-    authForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      showToast("Authentication confirmed. Accessing corporate dashboard...");
-      setTimeout(() => {
+  // Handle Form Submission
+  authForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("auth-email").value.trim();
+    const password = document.getElementById("auth-password").value;
+
+    const user = SessionManager.login(email, password, activeRole);
+    showToast(`Access granted. Welcome, ${user.name}!`);
+
+    setTimeout(() => {
+      if (redirectTarget) {
+        window.location.href = decodeURIComponent(redirectTarget);
+      } else if (activeRole === "admin") {
+        window.location.href = "../admin/dashboard.html";
+      } else {
         window.location.href = "dashboard.html";
-      }, 1000);
-    });
-  }
+      }
+    }, 800);
+  });
 }

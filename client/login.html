@@ -55,8 +55,9 @@
       </div>
 
       <div class="auth-role-tabs">
-        <button class="auth-role-btn active" data-role="candidate">Candidate Portal</button>
-        <button class="auth-role-btn" data-role="employer">Enterprise Recruiter</button>
+        <button type="button" class="auth-role-btn active" data-role="candidate">Candidate</button>
+        <button type="button" class="auth-role-btn" data-role="employer">Recruiter</button>
+        <button type="button" class="auth-role-btn" data-role="admin">Administrator</button>
       </div>
 
       <form id="auth-login-form">
@@ -73,7 +74,7 @@
           <input type="password" id="auth-password" class="form-control" placeholder="••••••••••••" required value="SecurePass2026!">
         </div>
 
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.875rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; font-size: 0.875rem;">
           <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
             <input type="checkbox" checked style="accent-color: var(--primary);">
             <span>Remember this workstation</span>
@@ -83,11 +84,26 @@
         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
           Sign In to Portal →
         </button>
+
+        <!-- Quick 1-Click Demo Logins -->
+        <div style="margin-top: 1.25rem; background: #f8fafc; border: 1px dashed var(--border-strong, #cbd5e1); border-radius: 8px; padding: 0.85rem; text-align: center;">
+          <div style="font-size: 0.775rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;">
+            ⚡ One-Click Instant Sign-In
+          </div>
+          <div style="display: flex; gap: 0.5rem; justify-content: center;">
+            <button type="button" class="btn btn-outline btn-sm" style="font-size: 0.775rem; padding: 0.35rem 0.65rem;" onclick="document.querySelector('[data-role=candidate]').click(); document.getElementById('auth-login-form').dispatchEvent(new Event('submit'));">
+              Candidate
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" style="font-size: 0.775rem; padding: 0.35rem 0.65rem;" onclick="document.querySelector('[data-role=admin]').click(); document.getElementById('auth-login-form').dispatchEvent(new Event('submit'));">
+              Administrator
+            </button>
+          </div>
+        </div>
       </form>
 
-      <div style="text-align: center; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); font-size: 0.875rem; color: var(--text-muted);">
+      <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); font-size: 0.875rem; color: var(--text-muted);">
         Staff or Board Member?
-        <a href="../admin/dashboard.html" style="font-weight: 700; color: var(--accent-blue);">Go to Admin Console →</a>
+        <a href="login.html?role=admin" style="font-weight: 700; color: var(--accent-blue);">Go to Admin Console →</a>
       </div>
     </div>
   </main>
