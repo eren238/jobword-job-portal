@@ -1,6 +1,6 @@
 /**
  * RemotelyAligned Auth & Password Reset Controller
- * Modeled after the Hostel Portal architecture (alertModal, OTP generation, password toggling)
+ * Modeled for Executive Corporate Design System with Hostel-style Animated Alert Modal & OTP
  */
 
 function getIconPath(name) {
@@ -65,20 +65,20 @@ function forgotPasswordHandle() {
   const emailAddress = emailInput ? emailInput.value.trim() : "";
 
   if (!emailAddress) {
-    alertModal(false, "EMAIL ADDRESS IS REQUIRED, Kindly fill in the email address to continue");
+    alertModal(false, "EMAIL ADDRESS IS REQUIRED. Please enter your corporate email to continue.");
     return;
   }
 
   if (!emailAddress.includes("@") || !emailAddress.includes(".")) {
-    alertModal(false, "INVALID EMAIL ADDRESS! Enter a valid email address and try again");
+    alertModal(false, "INVALID EMAIL ADDRESS. Please enter a valid email address and try again.");
     return;
   }
 
   const forgotBtn = document.getElementById('forgotPasswordBtnId');
-  let originalBtnText = 'Proceed to reset password';
+  let originalBtnText = 'Proceed to Reset Password →';
   if (forgotBtn) {
     originalBtnText = forgotBtn.innerHTML;
-    forgotBtn.innerHTML = 'Processing...';
+    forgotBtn.innerHTML = 'Generating OTP...';
     forgotBtn.disabled = true;
   }
 
@@ -87,12 +87,17 @@ function forgotPasswordHandle() {
 
   // Clean user name from email
   const userPart = emailAddress.split('@')[0].replace(/[._-]/g, ' ');
-  const userName = userPart.replace(/\b\w/g, l => l.toUpperCase()) || "Candidate";
+  const userName = userPart.replace(/\b\w/g, l => l.toUpperCase()) || "Executive";
+
+  // Determine active role
+  const activeRoleBtn = document.querySelector(".auth-role-btn.active");
+  const role = activeRoleBtn ? activeRoleBtn.dataset.role : (emailAddress.includes("admin") ? "admin" : "candidate");
 
   const sessionPayload = {
     emailAddress: emailAddress,
     resetOtp: otpCode,
     userName: userName,
+    role: role,
     timestamp: Date.now()
   };
 
@@ -103,8 +108,9 @@ function forgotPasswordHandle() {
       forgotBtn.innerHTML = originalBtnText;
       forgotBtn.disabled = false;
     }
-    const redirectUrl = "reset-password.html";
-    alertModal(true, `👋 Hi, ${emailAddress} an OTP (${otpCode}) has been sent to your email to reset your password`, redirectUrl);
+    const isInAdmin = window.location.pathname.includes('/admin/');
+    const redirectUrl = isInAdmin ? "reset-password.html" : "reset-password.html";
+    alertModal(true, `👋 Hi, ${emailAddress} an OTP (${otpCode}) has been generated and sent to your email to reset your password.`, redirectUrl);
   }, 400);
 }
 
@@ -131,48 +137,48 @@ function resetPasswordHandle() {
   }
 
   if (!emailAddress) {
-    alertModal(false, "EMAIL ADDRESS IS REQUIRED, Kindly fill in the email address to continue");
+    alertModal(false, "EMAIL ADDRESS IS REQUIRED. Please enter your email address.");
     return;
   }
 
   if (!otpCode) {
-    alertModal(false, "OTP IS REQUIRED, Kindly enter your 6-digit reset code");
+    alertModal(false, "OTP IS REQUIRED. Please enter your 6-digit reset OTP.");
     return;
   }
 
   if (otpCode.length < 6) {
-    alertModal(false, "OTP MUST NOT BE LESS THAN 6 DIGITS");
+    alertModal(false, "OTP MUST NOT BE LESS THAN 6 DIGITS.");
     return;
   }
 
   if (otpCode.length > 6) {
-    alertModal(false, "OTP MUST NOT BE MORE THAN 6 DIGITS");
+    alertModal(false, "OTP MUST NOT BE MORE THAN 6 DIGITS.");
     return;
   }
 
   // Validate OTP code against stored session code
   if (storedSession && storedSession.resetOtp && storedSession.resetOtp !== otpCode) {
-    alertModal(false, "INVALID RESET OTP! Kindly check the code sent to your email and try again");
+    alertModal(false, "INVALID RESET OTP! Kindly check the code sent to your email and try again.");
     return;
   }
 
   if (!newPassword) {
-    alertModal(false, "NEW PASSWORD IS REQUIRED");
+    alertModal(false, "NEW PASSWORD IS REQUIRED.");
     return;
   }
 
   if (newPassword.length < 8) {
-    alertModal(false, "PASSWORD MUST NOT BE LESS THAN 8 CHARACTERS");
+    alertModal(false, "PASSWORD MUST NOT BE LESS THAN 8 CHARACTERS.");
     return;
   }
 
   if (newPassword !== confirmPassword) {
-    alertModal(false, "NEW PASSWORDS DO NOT MATCH");
+    alertModal(false, "NEW PASSWORDS DO NOT MATCH.");
     return;
   }
 
   const resetBtn = document.getElementById('resetPasswordBtnId');
-  let originalBtnText = 'Reset Password';
+  let originalBtnText = 'Reset Password & Sign In →';
   if (resetBtn) {
     originalBtnText = resetBtn.innerHTML;
     resetBtn.innerHTML = 'Updating Password...';
@@ -188,7 +194,8 @@ function resetPasswordHandle() {
     }
 
     const isInAdmin = window.location.pathname.includes('/admin/');
-    const redirectUrl = isInAdmin ? "../client/login.html?role=admin&reset=success" : "login.html?reset=success";
+    const roleParam = storedSession && storedSession.role === "admin" ? "?role=admin&reset=success" : "?reset=success";
+    const redirectUrl = isInAdmin ? `../client/login.html${roleParam}` : `login.html${roleParam}`;
 
     alertModal(true, "PASSWORD RESET SUCCESSFUL! Your account has been updated with your new password.", redirectUrl);
   }, 450);
@@ -200,8 +207,8 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleButtons.forEach(btn => {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-      const wrapper = btn.closest(".password-input-wrapper") || btn.parentElement;
-      const input = wrapper ? wrapper.querySelector("input") : null;
+      const parent = btn.parentElement;
+      const input = parent ? parent.querySelector("input") : null;
       const icon = btn.querySelector("i");
       if (input) {
         const isPassword = input.getAttribute("type") === "password";
@@ -220,8 +227,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (raw) {
       const parsed = JSON.parse(raw);
       const email = parsed.emailAddress || "";
-      const name = parsed.userName || "Candidate";
+      const name = parsed.userName || "Executive";
       const otp = parsed.resetOtp || "";
+      const role = parsed.role || "candidate";
 
       const userNameEl = document.getElementById("userName");
       if (userNameEl) userNameEl.textContent = name;
@@ -230,12 +238,59 @@ document.addEventListener("DOMContentLoaded", function () {
       if (userEmailEl && email) userEmailEl.textContent = email;
 
       const emailInput = document.getElementById("emailAddress");
-      if (emailInput && !emailInput.value && email) emailInput.value = email;
+      if (emailInput && email) emailInput.value = email;
 
       const otpInput = document.getElementById("otpCode") || document.getElementById("resetOtp");
       if (otpInput && !otpInput.value && otp) {
         otpInput.placeholder = `e.g. ${otp}`;
       }
+
+      // Update role tab if on reset page
+      const roleBtn = document.querySelector(`.auth-role-btn[data-role="${role}"]`);
+      if (roleBtn) {
+        document.querySelectorAll(".auth-role-btn").forEach(b => b.classList.remove("active"));
+        roleBtn.classList.add("active");
+      }
     }
   } catch (e) {}
+
+  // Role Tab Switching on Forgot Password
+  const roleButtons = document.querySelectorAll(".auth-role-btn");
+  const emailInput = document.getElementById("emailAddress");
+  const formTitle = document.getElementById("auth-form-title");
+
+  const defaultRoleAccounts = {
+    candidate: "alexander.vance@executive.io",
+    employer: "recruiter@apexglobal.tech",
+    admin: "admin@remotelyaligned.com"
+  };
+
+  const defaultRoleTitles = {
+    candidate: "Candidate Account Recovery",
+    employer: "Recruiter Account Recovery",
+    admin: "Executive Administrator Recovery"
+  };
+
+  roleButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+      roleButtons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+
+      const role = this.dataset.role;
+      if (emailInput && defaultRoleAccounts[role]) {
+        emailInput.value = defaultRoleAccounts[role];
+      }
+      if (formTitle && defaultRoleTitles[role] && window.location.pathname.includes("forgot-password")) {
+        formTitle.textContent = defaultRoleTitles[role];
+      }
+    });
+  });
+
+  // Check URL params for role (e.g. ?role=admin)
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedRole = urlParams.get("role");
+  if (requestedRole) {
+    const targetBtn = document.querySelector(`.auth-role-btn[data-role="${requestedRole}"]`);
+    if (targetBtn) targetBtn.click();
+  }
 });
