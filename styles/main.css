@@ -1080,14 +1080,14 @@ button, input, select, textarea {
   display: flex;
   gap: 1.5rem;
   width: max-content;
-  animation: moveCategoriesMarquee 36s linear infinite;
+  animation: moveCategoriesMarquee 32s linear infinite !important;
   will-change: transform;
 }
 
-/* Pause animation on hover or when paused */
+/* Continue moving without stopping - perpetual fluid animation */
 .categories-marquee-wrapper:hover .categories-track,
-.categories-track.is-paused {
-  animation-play-state: paused !important;
+.categories-track {
+  animation-play-state: running !important;
 }
 
 @keyframes moveCategoriesMarquee {
@@ -1143,25 +1143,37 @@ button, input, select, textarea {
   height: 100%;
 }
 
-.category-icon-box {
-  width: 52px;
-  height: 52px;
-  background-color: var(--primary-50);
-  color: var(--primary);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
+/* Real-Life Photo Container */
+.category-photo-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  overflow: hidden;
   margin-bottom: 1.25rem;
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(15, 28, 63, 0.12);
+  border: 2px solid #e0eeff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  position: relative;
+  background-color: var(--primary-50);
 }
 
-.category-card:hover .category-icon-box {
-  background: linear-gradient(135deg, var(--primary) 0%, #12959f 100%);
-  color: #ffffff;
-  transform: scale(1.12) rotate(4deg);
-  box-shadow: 0 6px 16px rgba(18, 149, 159, 0.3);
+.category-real-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-photo-box {
+  border-color: #12959f;
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(18, 149, 159, 0.3);
+}
+
+.category-card:hover .category-real-photo {
+  transform: scale(1.15);
 }
 
 .category-title {

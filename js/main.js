@@ -664,83 +664,26 @@ function initAuthPage() {
 }
 
 /* ==========================================================================
-   Category Carousel & Moving Marquee Controller
+   Category Carousel & Non-Stop Moving Marquee Controller
    ========================================================================== */
 function initCategoryCarousel() {
   const track = document.getElementById("categories-track");
   const wrapper = document.getElementById("categories-marquee");
   const prevBtn = document.getElementById("cat-prev-btn");
   const nextBtn = document.getElementById("cat-next-btn");
-  const pauseBtn = document.getElementById("cat-pause-btn");
-  const pauseIcon = document.getElementById("cat-pause-icon");
 
   if (!track || !wrapper) return;
 
-  let isPaused = false;
-
-  // Toggle Pause / Play
-  if (pauseBtn && pauseIcon) {
-    pauseBtn.addEventListener("click", () => {
-      isPaused = !isPaused;
-      track.classList.toggle("is-paused", isPaused);
-      if (isPaused) {
-        pauseIcon.className = "bi bi-play-fill";
-        pauseBtn.title = "Resume Auto-Glide";
-      } else {
-        pauseIcon.className = "bi bi-pause-fill";
-        pauseBtn.title = "Pause Motion";
-      }
-    });
-  }
-
-  // Next and Previous controls
+  // Next and Previous controls (instant smooth manual nudges while maintaining non-stop movement)
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
-      track.classList.add("is-paused");
       wrapper.scrollBy({ left: 320, behavior: "smooth" });
-      setTimeout(() => {
-        if (!isPaused) track.classList.remove("is-paused");
-      }, 1500);
     });
   }
 
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
-      track.classList.add("is-paused");
       wrapper.scrollBy({ left: -320, behavior: "smooth" });
-      setTimeout(() => {
-        if (!isPaused) track.classList.remove("is-paused");
-      }, 1500);
     });
   }
-
-  // Drag-to-scroll support for mouse & touch
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  wrapper.addEventListener("mousedown", (e) => {
-    isDown = true;
-    startX = e.pageX - wrapper.offsetLeft;
-    scrollLeft = wrapper.scrollLeft;
-    track.classList.add("is-paused");
-  });
-
-  wrapper.addEventListener("mouseleave", () => {
-    isDown = false;
-    if (!isPaused) track.classList.remove("is-paused");
-  });
-
-  wrapper.addEventListener("mouseup", () => {
-    isDown = false;
-    if (!isPaused) track.classList.remove("is-paused");
-  });
-
-  wrapper.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - wrapper.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    wrapper.scrollLeft = scrollLeft - walk;
-  });
 }
