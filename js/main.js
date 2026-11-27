@@ -583,6 +583,13 @@ function initAuthPage() {
   const redirectTarget = urlParams.get("redirect");
   const requestedRole = urlParams.get("role");
   const authReason = urlParams.get("reason");
+  const resetSuccess = urlParams.get("reset");
+
+  if (resetSuccess === "success") {
+    setTimeout(() => {
+      showToast("Password updated successfully! Please sign in with your new password.");
+    }, 300);
+  }
 
   // Display notice banner if redirected for required authentication
   const authHeader = document.querySelector(".auth-header");
