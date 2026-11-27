@@ -1007,6 +1007,21 @@ button, input, select, textarea {
   position: relative;
 }
 
+.section-categories .section-header {
+  margin-bottom: 2.75rem;
+  text-align: center;
+}
+
+.section-categories .section-header .section-tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.section-categories .section-header .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .section-header-flex {
   display: flex;
   justify-content: space-between;
